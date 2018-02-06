@@ -36,13 +36,13 @@ angular.module("Throfolio").controller("PortCtrl", function ($scope, FbFactory, 
             
             
 
-            FbFactory.getPins($routeParams.id)
-                .then((pins) => {
-                    $scope.pins = pins.data;
-                })
-                .catch((error) => {
-                    console.log("getPins didn't work", error);
-                });
+            // FbFactory.getPins($routeParams.id)
+            //     .then((pins) => {
+            //         $scope.pins = pins.data;
+            //     })
+            //     .catch((error) => {
+            //         console.log("getPins didn't work", error);
+            //     });
         } else {
             console.log("not logged in");
         }
