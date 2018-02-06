@@ -1,3 +1,5 @@
+"use strict";
+
 angular.module("Throfolio", ["ngRoute"])
     // .constant('_') //may want lodash maybe not
 

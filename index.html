@@ -6,7 +6,27 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-<body>
+<body ng-app="Throfolio">
     
+    <div ng-view></div>
+    
+
+    <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js">
+    </script>
+    <script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
+    <script type="text/javascript" src="node_modules/angular-route/angular-route.min.js"></script>
+    <script src="node_modules/firebase/firebase.js"></script>
+
+    <!-- Factories -->
+
+    <script src="app/factories/AuthFactory.js"></script>
+    <script src="app/factories/FBFactory.js"></script>
+
+    <!-- Controllers -->
+     <script src="app/controllers/AuthCtrl.js"></script>
+    <script src="app/controllers/PortCtrl.js"></script>
+    <script src="app/controllers/RefCtrl.js"></script>
+
 </body>
 </html>
