@@ -22,6 +22,8 @@ angular.module("Throfolio", ["ngRoute"])
         //more routes for unauthenticated viewers to view specific profiles
 
     })
+
+    
 .run(FBcreds => {
         let creds = FBcreds;
         let authConfig = {
