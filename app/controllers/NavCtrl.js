@@ -5,7 +5,7 @@ angular.module("Throfolio").controller("NavCtrl", function($scope, AuthFactory, 
 
     
     //placeholder
-    $scope.logo = "images/pizza-ghost.png";
+
 
     $scope.navBar = [
         {
@@ -24,7 +24,7 @@ angular.module("Throfolio").controller("NavCtrl", function($scope, AuthFactory, 
                 AuthFactory.login()
                 .then(user => {
                     console.log('User: ', user);
-                    $window.location = "/#!/boards";
+                    $window.location = "/#!/portfolio";
                 });
             } else {
                 AuthFactory.logout();
