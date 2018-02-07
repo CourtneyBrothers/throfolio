@@ -23,7 +23,7 @@ angular.module("Throfolio").controller("PortCtrl", function ($scope, FbFactory, 
 
 
             // This function saves the new board object when the user clicks "Create"
-            $scope.saveBoard = () => {
+            $scope.savePortfolio = () => {
                 $scope.newBoard.uid = firebase.auth().currentUser.uid;
                 FbFactory.addBoard($scope.newBoard)
                     .then((board) => {
