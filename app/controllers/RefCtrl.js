@@ -5,7 +5,8 @@ angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $
           $scope.newPin = {
             uid: "",
             name: "",
-            url: ""
+            url: "",
+            username: ""
           };
   
       
@@ -19,6 +20,7 @@ angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $
             console.log("New Pin", $scope.newPin);
             // I think "$routeParams.id" will be the boards id?
             $scope.newPin.boardId = $routeParams.boardId;
+            $scope.newPin.username = firebase.auth().currentUser.displayName;
             console.log("route id", $routeParams.id, "route", $routeParams);
             $scope.newPin.uid = firebase.auth().currentUser.uid;
   
