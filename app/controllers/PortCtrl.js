@@ -54,7 +54,13 @@ angular.module("Throfolio").controller("PortCtrl", function ($scope, FbFactory, 
             //     });
         } else {
             console.log("not logged in");
-
+            FbFactory.getAllBoards()
+            .then((boards) => {
+                $scope.boards = boards;
+            })
+            .catch((error) => {
+                console.log("getBoards didn't work", error);
+            });
 
         }
     });

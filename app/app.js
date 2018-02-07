@@ -8,7 +8,7 @@ angular.module("Throfolio", ["ngRoute"])
         $routeProvider
         .when("/", {
             templateUrl: "partials/landing-view.html",
-            controller: "AuthCtrl"
+            controller: "PortCtrl"
         })
         .when("/portfolio", {
             templateUrl: "partials/portfolio-view.html",

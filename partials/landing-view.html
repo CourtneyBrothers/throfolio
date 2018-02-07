@@ -1,4 +1,26 @@
 
 
 
-<input class="search-bar" type="text" ng-model="searchTerm.searchTerm">
+<input class="search-bar" type="text" ng-model="searchTerm.searchTerm" placeholder="search for portfolios">
+
+<div ng-repeat="board in boards | filter: searchTerm.searchTerm">
+    <md-autocomplete md-selected-item="selected" md-search-text="searchText" md-items="board in board" md-item-text="item.display">
+        <span md-highlight-text="searchText">{{item.display}}</span>
+      </md-autocomplete>
+</div>
+
+<div class ="portfolioContainer">
+
+    <div class="band">  <!-- cb add class for grid styling -->
+        <div ng-repeat="board in boards | filter: searchTerm.searchTerm">
+            <div class = "pinBoard">
+                <h1><a ng-href="#!/portfolio/{{board.boardId}}">{{board.username}}</a></h1>
+                <h1><a ng-href="#!/portfolio/{{board.boardId}}">{{board.name}}</a></h1>
+                    <img src={{board.url}} alt="?">
+                    <button ng-click="boardDestroy(board.boardId)">Delete Board</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

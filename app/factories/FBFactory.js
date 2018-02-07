@@ -59,7 +59,7 @@ angular.module("Throfolio").factory("FbFactory", ($http, $q) => {
     function addPin(newPin) {
         return $q((resolve, reject) => {
             $http
-                .post(`https://throfolio.firebaseio.com//pins.json`, JSON.stringify(newPin))
+                .post(`https://throfolio.firebaseio.com/pins.json`, JSON.stringify(newPin))
                 .then((data) => {
                     resolve(data);
                 })
@@ -85,9 +85,27 @@ angular.module("Throfolio").factory("FbFactory", ($http, $q) => {
     }
 
 
+    //CB ADD Get all boards
+
+    function getAllBoards() {
+        return $q((resolve, reject) => {
+            $http
+                .get(`https://throfolio.firebaseio.com/pieces.json`)
+                .then((boards) => {
+                    let keys = Object.keys(boards.data);
+                    keys.forEach(key => {
+                        boards.data[key].boardId = key;
+                    });
+                    let boardsDataArr = Object.values(boards.data);
+                    resolve(boardsDataArr);
+                })
+                .catch((error) => {
+                    reject(error);
+                });
+        });
+    }
 
 
-
-    return {addBoard, getBoards, getPins, addPin, getBoard};
+    return {addBoard, getBoards, getPins, addPin, getBoard, getAllBoards};
 
 });

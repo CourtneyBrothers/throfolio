@@ -35,20 +35,12 @@ angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $
               });
   
           };
-  
+          
+         
+          
+
     
   
-        //   $scope.getNameOfBoard = () => {
-        //     console.log("get");
-        //     FbFactory.getBoard($routeParams.boardId).then(data => {
-        //       $scope.boardName = data.data.name;
-        //       console.log("scope.boardName", $scope.boardName);
-        //     });
-        //   };
-   
-          //cb calling add cover url function here
-  
-          //cb
         } else {
           console.log("not logged in");
         }

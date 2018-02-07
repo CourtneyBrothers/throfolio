@@ -1,9 +1,10 @@
 "use strict";
 
-angular.module("Throfolio").controller("NavCtrl", function($scope, AuthFactory, $location, $window ) {
+angular.module("Throfolio").controller("NavCtrl", function($scope, AuthFactory, $location, $window, FilterFactory ) {
   
 
-    
+    $scope.searchTerm = FilterFactory;
+
     //placeholder
 
 
