@@ -37,14 +37,57 @@ angular.module("Throfolio").factory("FbFactory", ($http, $q) => {
         });
     }
 
+   
+    function getPins(boardId) {
+        return $q((resolve, reject) => {
+            $http
+                .get(`https://throfolio.firebaseio.com/pins.json?orderBy="boardId"&equalTo="${boardId}"`)
+                .then((data) => {
+                    let keys = Object.keys(data.data);
+                    keys.forEach(key => {
+                        data.data[key].pinId = key;
+                    });
+                    let pinArr = Object.values(data.data);
+                    resolve(pinArr);
+                })
+                .catch((error) => {
+                    reject(error);
+                });
+        });
+    }
+
+    function addPin(newPin) {
+        return $q((resolve, reject) => {
+            $http
+                .post(`https://throfolio.firebaseio.com//pins.json`, JSON.stringify(newPin))
+                .then((data) => {
+                    resolve(data);
+                })
+                .catch((error) => {
+                    reject(error);
+                });
+        });
+    }
+
+
+    function getBoard(boardId) {
+        return $q((resolve, reject) => {
+            $http
+                .get(`https://throfolio.firebaseio.com/portfolio/${boardId}.json`)
+                .then((data) => {
+                    resolve(data);
+                })
+                .catch((error) => {
+                    reject(error);
+                    console.log("errro");
+                });
+        });
+    }
 
 
 
 
 
-
-
-
-    return {addBoard, getBoards};
+    return {addBoard, getBoards, getPins, addPin, getBoard};
 
 });
