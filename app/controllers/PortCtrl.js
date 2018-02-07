@@ -8,7 +8,8 @@ angular.module("Throfolio").controller("PortCtrl", function ($scope, FbFactory, 
         if (user) {
             // New board object
             $scope.newBoard = {
-                name: ""
+                name: "",
+                url:""
             };
 
             // This promise gets all the logged in user's boards from the factory then assigns the boards to "boards".
