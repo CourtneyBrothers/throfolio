@@ -11,8 +11,10 @@ angular.module("Throfolio").factory("AuthFactory", (FBcreds, $q)=>{
         .then(function(result){
             var token = result.credential.accessToken;
             var user = result.user.G;
+            var userName = result.user.displayName;
             console.log("RESULT",result);
-            return user;
+            console.log(result.user.displayName, "display name");
+            return {user, userName};
         }).catch(function(error){
             var errorCode = error.code;
             var errorMessage = error.message;

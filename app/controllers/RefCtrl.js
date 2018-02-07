@@ -43,8 +43,7 @@ angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $
         //       console.log("scope.boardName", $scope.boardName);
         //     });
         //   };
-  
-        //   $scope.getNameOfBoard();
+   
           //cb calling add cover url function here
   
           //cb

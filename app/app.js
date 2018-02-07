@@ -6,8 +6,8 @@ angular.module("Throfolio", ["ngRoute"])
     //These routes ( .when x 3 are for user interface)
     .config($routeProvider => {
         $routeProvider
-        .when("/login", {
-            templateUrl: "partials/nav-view.html",
+        .when("/", {
+            templateUrl: "partials/landing-view.html",
             controller: "AuthCtrl"
         })
         .when("/portfolio", {
@@ -23,7 +23,7 @@ angular.module("Throfolio", ["ngRoute"])
 
     })
 
-    
+
 .run(FBcreds => {
         let creds = FBcreds;
         let authConfig = {

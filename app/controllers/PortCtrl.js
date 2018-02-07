@@ -9,10 +9,13 @@ angular.module("Throfolio").controller("PortCtrl", function ($scope, FbFactory, 
             // New board object
             $scope.newBoard = {
                 name: "",
-                url:""
+                url:"",
+                username:""
             };
 
             // This promise gets all the logged in user's boards from the factory then assigns the boards to "boards".
+
+            
             FbFactory.getBoards()
                 .then((boards) => {
                     $scope.boards = boards;
@@ -26,11 +29,16 @@ angular.module("Throfolio").controller("PortCtrl", function ($scope, FbFactory, 
             // This function saves the new board object when the user clicks "Create"
             $scope.savePortfolio = () => {
                 $scope.newBoard.uid = firebase.auth().currentUser.uid;
+
+                console.log("firebase.auth().currentUser",firebase.auth().currentUser);
+                $scope.newBoard.username = firebase.auth().currentUser.displayName;
+
+                // $scope.newBoard.username = firebase.auth().currentUser. ///CB NOT DONE HERE TODO
                 FbFactory.addBoard($scope.newBoard)
                     .then((board) => {
                         // $location.url("/boards");
                         $route.reload("/portfolio");
-
+                        
                     });
             };
 
@@ -46,6 +54,8 @@ angular.module("Throfolio").controller("PortCtrl", function ($scope, FbFactory, 
             //     });
         } else {
             console.log("not logged in");
+
+
         }
     });
 });
