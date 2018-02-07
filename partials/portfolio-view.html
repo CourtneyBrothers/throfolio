@@ -2,15 +2,15 @@
 
         <div class="band">  <!-- cb add class for grid styling -->
             <div class="newPortfolioImage">
-                    <input type="text" placeholder="Portfolio Name" ng-model="newBoard.name">
+                    <input type="text" placeholder="Board Name" ng-model="newBoard.name">
                     <br>
-                    <button ng-click="savePortfolio()">Add portfolio</button>
+                    <button ng-click="saveBoard()">Add Board</button>
                 </div>
-            <div ng-repeat="portfolio in portfolios">
-                <div class = "pinPortfolio">
-                    <h1><a ng-href="#!/pins/{{portfolio.portfolioId}}">{{portfolio.name}}</a></h1>
-                        <img src={{portfolio.url}} alt="?">
-                        <button ng-click="portfolioDestroy(portfolio.portfolioId)">Delete portfolio</button>
+            <div ng-repeat="board in boards | filter: searchTerm.searchTerm">
+                <div class = "pinBoard">
+                    <h1><a ng-href="#!/pins/{{board.boardId}}">{{board.name}}</a></h1>
+                        <img src={{board.url}} alt="?">
+                        <button ng-click="boardDestroy(board.boardId)">Delete Board</button>
                     </div>
                 </div>
             </div>
