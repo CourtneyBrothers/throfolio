@@ -18,6 +18,13 @@ angular.module("Throfolio", ["ngRoute"])
             templateUrl: "partials/ref-view.html",
             controller: "RefCtrl"
         })
+        .when("/DISPLAYNAME",{
+            templateUrl: "partials/portfolio-view.html",
+            controller: "PortCtrl"
+        }) //TODOOOOO LINK THIS
+        .when("/DISPLAYNAME/REFS") ///TODO
+            templateUrl: "partials/ref-view.html",
+            controller: "RefCtrl"
         .otherwise("/");
         //more routes for unauthenticated viewers to view specific profiles
 
