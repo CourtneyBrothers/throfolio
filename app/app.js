@@ -8,7 +8,7 @@ angular.module("Throfolio", ["ngRoute"])
         $routeProvider
         .when("/", {
             templateUrl: "partials/landing-view.html",
-            controller: "PortCtrl"
+            controller: "PortMainCtrl"
         })
         .when("/portfolio", {
             templateUrl: "partials/portfolio-view.html",
@@ -18,7 +18,7 @@ angular.module("Throfolio", ["ngRoute"])
             templateUrl: "partials/ref-view.html",
             controller: "RefCtrl"
         })
-        .when("/DISPLAYNAME",{
+        .when("/portfolio/:username",{  ///needs to go in IS NOT AUTH
             templateUrl: "partials/portfolio-view.html",
             controller: "PortCtrl"
         }) //TODOOOOO LINK THIS

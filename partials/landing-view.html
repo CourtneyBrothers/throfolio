@@ -15,7 +15,8 @@
         <div ng-repeat="board in boards | filter: searchTerm.searchTerm">
             <div class = "pinBoard">
                 <h1><a ng-href="#!/portfolio/{{board.boardId}}">{{board.username}}</a></h1>
-                <h1><a ng-href="#!/portfolio/{{board.boardId}}">{{board.name}}</a></h1>
+                <!-- change to board.username -->
+                <h1><a ng-href="#!/portfolio/{{board.username}}">{{board.name}}</a></h1>
                     <img src={{board.url}} alt="?">
                     <button ng-click="boardDestroy(board.boardId)">Delete Board</button>
                 </div>
