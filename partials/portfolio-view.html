@@ -10,7 +10,7 @@
             <div ng-repeat="board in boards">  
                 <div class = "pinBoard">
                     <h1><a ng-href="#!/portfolio/{{board.boardId}}">{{board.name}}</a></h1>
-                        <img src={{board.url}} alt="?">
+                        <img src={{board.url}} alt="?" draggable="true">
                         <button ng-click="boardDestroy(board.boardId)">Delete Board</button>
                     </div>
                 </div>
