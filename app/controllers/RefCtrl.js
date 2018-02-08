@@ -35,6 +35,17 @@ angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $
               });
   
           };
+
+          $scope.getNameOfBoard = () => {
+            console.log("get");
+            FbFactory.getBoard($routeParams.boardId).then(data => {
+                console.log("data in getBoard", data);
+              $scope.boardName = data.data.name;
+              console.log("scope.boardName", $scope.boardName);
+            });
+          };
+  
+          $scope.getNameOfBoard();
           
          
           
@@ -42,7 +53,16 @@ angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $
     
   
         } else {
-          console.log("not logged in");
+
+            //get pins
+          console.log("not logged in to see pins");
+          console.log($routeParams.boardId, "route parms board id");
+          FbFactory.getPins($routeParams.boardId).then(data => {
+            console.log("pins data", data);
+            $scope.pins = data;
+          });
+
+
         }
       });
       //cb

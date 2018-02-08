@@ -19,6 +19,7 @@ angular.module("Throfolio").controller("PortCtrl", function ($scope, FbFactory, 
             FbFactory.getBoards()
                 .then((boards) => {
                     $scope.boards = boards;
+                    console.log("boards in get boards", boards);
                 })
                 .catch((error) => {
                     console.log("getBoards didn't work", error);
@@ -36,13 +37,14 @@ angular.module("Throfolio").controller("PortCtrl", function ($scope, FbFactory, 
                 // $scope.newBoard.username = firebase.auth().currentUser. ///CB NOT DONE HERE TODO
                 FbFactory.addBoard($scope.newBoard)
                     .then((board) => {
+                        console.log("board in addBoard", board);
                         // $location.url("/boards");
                         $route.reload("/portfolio");
                         
                     });
             };
 
-            
+          
             
 
             // FbFactory.getPins($routeParams.id)
@@ -53,7 +55,7 @@ angular.module("Throfolio").controller("PortCtrl", function ($scope, FbFactory, 
             //         console.log("getPins didn't work", error);
             //     });
         } else {
-            console.log("not logged in");
+            console.log("not logged in to see upload boards");
             FbFactory.getAllBoards()
             .then((boards) => {
                 $scope.boards = boards;

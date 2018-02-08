@@ -7,7 +7,7 @@
                     <br>
                     <button ng-click="savePortfolio()">Add Board</button>
                 </div>
-            <div ng-repeat="board.name in boards | filter: searchTerm.searchTerm">
+            <div ng-repeat="board in boards">  
                 <div class = "pinBoard">
                     <h1><a ng-href="#!/portfolio/{{board.boardId}}">{{board.name}}</a></h1>
                         <img src={{board.url}} alt="?">

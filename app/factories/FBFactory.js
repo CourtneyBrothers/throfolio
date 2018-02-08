@@ -52,6 +52,7 @@ angular.module("Throfolio").factory("FbFactory", ($http, $q) => {
                 })
                 .catch((error) => {
                     reject(error);
+                    console.log("eroor",error);
                 });
         });
     }
@@ -73,13 +74,14 @@ angular.module("Throfolio").factory("FbFactory", ($http, $q) => {
     function getBoard(boardId) {
         return $q((resolve, reject) => {
             $http
-                .get(`https://throfolio.firebaseio.com/portfolio/${boardId}.json`)
+                .get(`https://throfolio.firebaseio.com/pieces/${boardId}.json`)
                 .then((data) => {
                     resolve(data);
+                    console.log("data in get board", data);
                 })
                 .catch((error) => {
                     reject(error);
-                    console.log("errro");
+                    console.log("errror",error);
                 });
         });
     }
@@ -105,6 +107,8 @@ angular.module("Throfolio").factory("FbFactory", ($http, $q) => {
         });
     }
 
+
+   
 
     return {addBoard, getBoards, getPins, addPin, getBoard, getAllBoards};
 
