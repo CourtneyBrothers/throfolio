@@ -22,8 +22,8 @@ angular.module("Throfolio", ["ngRoute"])
             templateUrl: "partials/unauth-portfolio-view.html",
             controller: "PortCtrl"
         }) //TODOOOOO LINK THIS
-        .when("/DISPLAYNAME/REFS",{ ///TODO
-            templateUrl: "partials/ref-view.html",
+        .when("/gettheref/:boardId",{ ///TODO
+            templateUrl: "partials/unauth-ref-view.html",
             controller: "RefCtrl"
         })
         .otherwise("/");
