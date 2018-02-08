@@ -18,8 +18,8 @@ angular.module("Throfolio", ["ngRoute"])
             templateUrl: "partials/ref-view.html",
             controller: "RefCtrl"
         })
-        .when("/portfolio/:username",{  ///needs to go in IS NOT AUTH
-            templateUrl: "partials/portfolio-view.html",
+        .when("/portfolios/:username",{  ///needs to go in IS NOT AUTH
+            templateUrl: "partials/unauth-portfolio-view.html",
             controller: "PortCtrl"
         }) //TODOOOOO LINK THIS
         .when("/DISPLAYNAME/REFS",{ ///TODO

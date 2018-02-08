@@ -56,9 +56,13 @@ angular.module("Throfolio").controller("PortCtrl", function ($scope, FbFactory, 
             //     });
         } else {
             console.log("not logged in to see upload boards");
-            FbFactory.getAllBoards()
+            console.log("routeParams", $routeParams.username);
+            FbFactory.getBoardsPublic($routeParams.username)
             .then((boards) => {
+                console.log("$scope.boards", $scope.boards);
                 $scope.boards = boards;
+                
+
             })
             .catch((error) => {
                 console.log("getBoards didn't work", error);

@@ -36,6 +36,27 @@ angular.module("Throfolio").factory("FbFactory", ($http, $q) => {
                 });
         });
     }
+// add portfolio to unauthpage
+    function getBoardsPublic(username) {
+        console.log("get boards public username", username);
+        return $q((resolve, reject) => {
+            $http
+                .get(`https://throfolio.firebaseio.com/pieces.json?orderBy="username"&equalTo="${username}"`)
+                .then((boards) => {
+                    console.log("boards in get public boards", boards);
+                    let keys = Object.keys(boards.data);
+                    keys.forEach(key => {
+                        boards.data[key].boardId = key;
+                    });
+                    let boardsDataArr = Object.values(boards.data);
+                    resolve(boardsDataArr);
+                })
+                .catch((error) => {
+                    reject(error);
+                    console.log ("error", error);
+                });
+        });
+    }
 
    
     function getPins(boardId) {
@@ -110,6 +131,6 @@ angular.module("Throfolio").factory("FbFactory", ($http, $q) => {
 
    
 
-    return {addBoard, getBoards, getPins, addPin, getBoard, getAllBoards};
+    return {addBoard, getBoards, getPins, addPin, getBoard, getAllBoards,getBoardsPublic};
 
 });
