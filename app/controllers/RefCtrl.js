@@ -1,5 +1,5 @@
 "use strict";
-angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $routeParams, $location, $route, $window) {
+angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $routeParams, $location, $route, $window,StorageFactory) {
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
           $scope.newPin = {
@@ -47,7 +47,10 @@ angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $
   
           $scope.getNameOfBoard();
           
-         
+         $scope.addImageToCload = () => {
+             console.log("cloud");
+             StorageFactory.storeImage().then
+         }
           
 
     

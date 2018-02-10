@@ -1,7 +1,7 @@
 "use strict";
 
 
-angular.module("Throfolio").controller("PortCtrl", function ($scope, FbFactory, $routeParams, $location, $route, $window) {
+angular.module("Throfolio").controller("PortCtrl", function ($scope, FbFactory, $routeParams, $location, $route, $window, StorageFactory) {
 
 
     firebase.auth().onAuthStateChanged(function (user) {
