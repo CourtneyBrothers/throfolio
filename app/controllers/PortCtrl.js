@@ -1,7 +1,7 @@
 "use strict";
 
 
-angular.module("Throfolio").controller("PortCtrl", function ($scope, FbFactory, $routeParams, $location, $route, $window, StorageFactory, FBcreds) {
+angular.module("Throfolio").controller("PortCtrl", function ($scope, FbFactory, $routeParams, $location, $route, $window, StorageFactory, FBcreds, $timeout) {
 
 
     firebase.auth().onAuthStateChanged(function (user) {
@@ -53,17 +53,17 @@ angular.module("Throfolio").controller("PortCtrl", function ($scope, FbFactory, 
         
 
             // 
+            $scope.$timeout = $timeout; // must be injected in controller.
             $scope.addImageToCloud = (e) => {
                 
-                console.log("e",e);
-                    console.log(e.target, "e.target");
-                    $scope.image = e;
-                    console.log($scope.image);
-                    console.log("e.currentTarget", e, "files");
-                    console.log("image",$scope.image);
+         
+                
+              
+                    let file = e;
+                 
                     var storage = firebase.storage();
-                    let storageRef = firebase.storage().ref($scope.image.name);
-                    storageRef.put($scope.image)
+                    let storageRef = firebase.storage().ref(file.name);
+                    storageRef.put(file)
                     
                     // return {addImageToCloud}                    
                     
