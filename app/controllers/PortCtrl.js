@@ -44,6 +44,19 @@ angular.module("Throfolio").controller("PortCtrl", function ($scope, FbFactory, 
                     });
             };
 
+            $scope.addImageToCloud = ({currentTarget}) => {
+                console.log("e",currentTarget);
+
+                    let image = currentTarget.files[0];
+                    console.log("e.currentTarget", currentTarget, "files");
+                    console.log("image",image);
+                    let storageRef = firebase.storage().ref(image.name);
+                    storageRef.put(image)
+                    .then((data)=>{
+                        console.log("data", data);
+                    });
+            };
+             
           
             
 

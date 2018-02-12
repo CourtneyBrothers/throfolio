@@ -47,11 +47,7 @@ angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $
   
           $scope.getNameOfBoard();
           
-         $scope.addImageToCload = () => {
-             console.log("cloud");
-             StorageFactory.storeImage().then
-         }
-          
+      
 
     
   
