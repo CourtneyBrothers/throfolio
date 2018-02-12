@@ -14,7 +14,10 @@ angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $
           FbFactory.getPins($routeParams.boardId).then(data => {
             console.log("pins data", data);
             $scope.pins = data;
+
           });
+
+
   
           $scope.savePin = () => {
             console.log("New Pin", $scope.newPin);
@@ -46,9 +49,41 @@ angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $
           };
   
           $scope.getNameOfBoard();
+
+
           
       
+          $scope.addPinToCloud = (e) => {
+            let pin = e;
+    
+                
+            var storage = firebase.storage();
+            
+            let storageRef = firebase.storage().ref(pin.name);
+           
+            storageRef.put(pin);
 
+            storageRef.getDownloadURL().then(function(url){
+
+                $scope.newPin.boardId = $routeParams.boardId;
+                $scope.newPin.uid = firebase.auth().currentUser.uid;
+                $scope.newPin.username = firebase.auth().currentUser.displayName;
+                $scope.newPin.url = url;
+
+                console.log($scope.newPin, "new PIn");
+
+                FbFactory.addPin($scope.newPin)
+        
+              .then(data => {
+                console.log("data in pin add pin", data);
+                $route.reload(`portfolio/${$scope.newPin.boardId}`); // this was pins but that route doesnt exist -CB
+              })
+              .catch(error => {
+                console.log(error);
+              });
+            });
+                
+          };
     
   
         } else {

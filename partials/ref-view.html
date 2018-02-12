@@ -8,6 +8,8 @@
 
         <div class="pinBand"><!-- cb add class band for grid styling -->
             <div id="newPinCard" class ="pinCard"> <!-- cb move thing into card grid -->
+                <input type="file" id="pinButton" onchange="angular.element(this).scope().addPinToCloud(event.currentTarget.files[0])" ng-model="file" />
+
                     <input type="text" placeholder="Pin Name" ng-model="newPin.name">
                     <br>
                     <input type="text" placeholder="Image URL" ng-model="newPin.url">
