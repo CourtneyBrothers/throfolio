@@ -1,7 +1,7 @@
 "use strict";
 
 
-angular.module("Throfolio").controller("PortCtrl", function ($scope, FbFactory, $routeParams, $location, $route, $window, StorageFactory) {
+angular.module("Throfolio").controller("PortCtrl", function ($scope, FbFactory, $routeParams, $location, $route, $window, StorageFactory, FBcreds) {
 
 
     firebase.auth().onAuthStateChanged(function (user) {
@@ -44,19 +44,39 @@ angular.module("Throfolio").controller("PortCtrl", function ($scope, FbFactory, 
                     });
             };
 
-            $scope.addImageToCloud = ({currentTarget}) => {
-                console.log("e",currentTarget);
 
-                    let image = currentTarget.files[0];
-                    console.log("e.currentTarget", currentTarget, "files");
+            //from FB Docs
+        
+        
+
+            // Get a reference to the storage service, which is used to create references in your storage bucket
+        
+
+            // 
+            $scope.addImageToCloud = (e) => {
+                
+                console.log("e",e);
+                    console.log(e.target, "e.target");
+                    let image = e;
+                    console.log(image);
+                    console.log("e.currentTarget", e, "files");
                     console.log("image",image);
+                    var storage = firebase.storage();
                     let storageRef = firebase.storage().ref(image.name);
                     storageRef.put(image)
+                    
+                    // return {addImageToCloud}                    
+                    
                     .then((data)=>{
                         console.log("data", data);
-                    });
+                    }
+                    
+                    
+
+                );
+                
             };
-             
+            
           
             
 

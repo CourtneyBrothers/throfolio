@@ -33,10 +33,10 @@ angular.module("Throfolio", ["ngRoute"])
 
 
 .run(FBcreds => {
-        let creds = FBcreds;
-        let authConfig = {
-            apiKey: creds.apiKey,
-            authDomain: creds.authDomain
-        };
-        firebase.initializeApp(authConfig);
+        // let creds = FBcreds;
+        // let authConfig = {  //try dh way
+        //     apiKey: creds.apiKey,
+        //     authDomain: creds.authDomain
+        // };
+        firebase.initializeApp(FBcreds);
     });
