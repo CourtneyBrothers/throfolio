@@ -2,7 +2,7 @@
 
         <div class="band">  <!-- cb add class for grid styling -->
             <div class="newPortfolioImage">
-                    <input type="file" id="fileButton" ng-click="addImageToCloud($event.currentTarget.files[0])"/> <!-- for cloud upload  function--> 
+                    <input type="file" id="fileButton" ng-change="addImageToCloud($event.currentTarget.files[0])"/> <!-- for cloud upload  function--> 
                     <input type="text" placeholder="Board Name" ng-model="newBoard.name">
                     <input type="text" placeholder="Image URL" ng-model="newBoard.url">
                     <br>
