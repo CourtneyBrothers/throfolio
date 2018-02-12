@@ -44,49 +44,36 @@ angular.module("Throfolio").controller("PortCtrl", function ($scope, FbFactory, 
                     });
             };
 
-
-            //from FB Docs
-        
-        
-
-            // Get a reference to the storage service, which is used to create references in your storage bucket
-        
-
-            // 
-            $scope.$timeout = $timeout; // must be injected in controller.
             $scope.addImageToCloud = (e) => {
-                
-         
-                
-              
+            
                     let file = e;
                  
+                
                     var storage = firebase.storage();
                     let storageRef = firebase.storage().ref(file.name);
-                    storageRef.put(file)
+                    storageRef.put(file);
                     
-                    // return {addImageToCloud}                    
-                    
-                    .then((data)=>{
-                        console.log("data", data);
-                    }
-                    
-                    
+                    storageRef.getDownloadURL().then(function(url){
+                        $scope.newBoard.uid = firebase.auth().currentUser.uid;
+                        $scope.newBoard.username = firebase.auth().currentUser.displayName;
+                        $scope.newBoard.url = url;
 
-                );
-                
+
+                        FbFactory.addBoard($scope.newBoard)
+                        .then((board) => {
+                            console.log("board in addBoard", board);
+                            // $location.url("/boards");
+                            $route.reload("/portfolio");
+                            
+                        });
+
+                    });
             };
             
-          
+  
             
 
-            // FbFactory.getPins($routeParams.id)
-            //     .then((pins) => {
-            //         $scope.pins = pins.data;
-            //     })
-            //     .catch((error) => {
-            //         console.log("getPins didn't work", error);
-            //     });
+       
         } else {
             console.log("not logged in to see upload boards");
             console.log("routeParams", $routeParams.username);
