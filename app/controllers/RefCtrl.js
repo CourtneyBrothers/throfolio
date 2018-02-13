@@ -54,7 +54,7 @@ angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $
             FbFactory.getBoard($routeParams.boardId).then(data => {
               console.log("data in getBoardCover", data);
             $scope.boardCover = data.data.url;
-            console.log("scope.boardCoverCover", $scope.boardCover);
+           
             });
           };
           

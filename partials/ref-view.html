@@ -1,5 +1,8 @@
 <div class = "pinContainer" >
 
+        <div pw-canvas options="{color: model.myColor}"></div>
+        <!-- <div pw-color-selector="['#000', '#00f', '#0f0', '#f00']" color="model.myColor"></div>
+ -->
 
     <h1>Board: {{boardName}}</h1>
    
@@ -17,23 +20,26 @@
                 </div>
             <div ng-repeat="pin in pins"> 
                 <div class="pinCard" id="pin"> <!-- cb add class card for grid styling -->
-                    <img src="{{board.url}}" alt="?" class="pinThumb">
+                    <img src="{{pin.url}}" alt="?" class="pinThumb">
                     <div class="pinHeader">
                         <h2>{{pin.name}}</h2>
                         <button ng-click="pinRemove(pin.pinId)">Delete Pin</button>
                         
                     </div>
 
-                    <div class="pinCard" id="mainImage"> <!-- cb add board image into ref view for comp -->
-                       
-                        <img src="{{boardCover}}" alt="?" class="pinCover">
-                            <!-- <h2>{{pin.name}}</h2> -->
-                           
-
-                    
-                            
-                        </div>
+                   
             </div>
+
+       
         </div>
+        <div class="pinCard" id="mainImage"> <!-- cb add board image into ref view for comp -->
+                       
+            <img src="{{boardCover}}" alt="?" class="pinCover">
+                <!-- <h2>{{pin.name}}</h2> -->
+               
+
+        
+                
+            </div>
     </div>
  </div>
