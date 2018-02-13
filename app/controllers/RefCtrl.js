@@ -50,8 +50,16 @@ angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $
   
           $scope.getNameOfBoard();
 
-
+          $scope.getBoardCover = () =>{
+            FbFactory.getBoard($routeParams.boardId).then(data => {
+              console.log("data in getBoardCover", data);
+            $scope.boardCover = data.data.url;
+            console.log("scope.boardCoverCover", $scope.boardCover);
+            });
+          };
           
+          //call getBoardCover
+        $scope.getBoardCover();
       
           $scope.addPinToCloud = (e) => {
             let pin = e;
@@ -84,6 +92,8 @@ angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $
             });
                 
           };
+
+          
     
   
         } else {
@@ -100,6 +110,17 @@ angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $
         }
       });
       //cb
+
+      $scope.getBoardCover = () =>{
+        FbFactory.getBoard($routeParams.boardId).then(data => {
+          console.log("data in getBoardCover", data);
+        $scope.boardCover = data.data.url;
+        console.log("scope.boardCover", $scope.boardCover);
+        });
+      };
+      
+      //call getBoardCover
+    $scope.getBoardCover();
   
       $scope.backToBoards = () => {
         console.log("clicked");
