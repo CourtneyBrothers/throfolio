@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body ng-app="Throfolio">
+    
+    <div ng-view></div>
+    <div ng-include="'partials/nav-view.html'"></div>
+
+    <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js">
+    </script>
+    <script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
+    <script type="text/javascript" src="node_modules/angular-route/angular-route.min.js"></script>
+    <script src="node_modules/firebase/firebase.js"></script>
+
+    
+    <script type="text/javascript" src="app/app.js"></script>
+    <script type="text/javascript" src="app/values/fb-creds.js"></script>
+    
+    <!-- Factories -->
+
+    <script src="app/factories/AuthFactory.js"></script>
+    <script src="app/factories/FBFactory.js"></script>
+    <script src="app/factories/FilterFactory.js"></script>
+    <script src="app/factories/StorageFactory.js"></script>
+
+    <!-- Controllers -->
+     <script src="app/controllers/AuthCtrl.js"></script>
+    <script src="app/controllers/PortCtrl.js"></script>
+    <script src="app/controllers/RefCtrl.js"></script>
+    <script src="app/controllers/NavCtrl.js"></script>
+    <script src="app/controllers/PortMainCtrl.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<div class ="portfolioContainer">
+
+        <div class="band">  <!-- cb add class for grid styling -->
+            <div class="newPortfolioImage">
+                    <input type="file" id="fileButton" onchange="angular.element(this).scope().addImageToCloud(event.currentTarget.files[0])" ng-model="file" /> <!-- for cloud upload  function--> 
+                    <input type="text" placeholder="Board Name" ng-model="newBoard.name">
+                    <input type="text" placeholder="Image URL" ng-model="newBoard.url">
+                    <br>
+                    <button ng-click="savePortfolio()">Add Board</button>
+                    <button ng-click="storeImage()">Add board from file</button>
+                </div>
+            <div ng-repeat="board in boards">  
+                <div class = "pinBoard">
+                    <h1><a ng-href="#!/portfolio/{{board.boardId}}">{{board.name}}</a></h1>
+                        <img src={{board.url}} alt="?" draggable="true">
+                        <button ng-click="boardDestroy(board.boardId)">Delete Board</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+</div>
