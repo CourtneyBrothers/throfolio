@@ -70,6 +70,8 @@ angular.module("Throfolio").controller("PortCtrl", function ($scope, FbFactory, 
                     });
             };
             
+
+            
   
             
 
