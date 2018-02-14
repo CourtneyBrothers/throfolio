@@ -4,7 +4,7 @@
         <h1>Board: {{boardName}}</h1>
        
     
-             
+        <div pw-canvas options="{width: 1000, height:1000, color: '#000', backgroundColor:'hsla(50, 33%, 25%, 0.01)', lineWidth:0.5}" id="canvas"></div>
     
             <div class="pinBand"><!-- cb add class band for grid styling -->
              
@@ -13,8 +13,7 @@
                         <img src="{{pin.url}}" alt="?" class="pinThumb">
                         <div class="pinHeader">
                             <h2>{{pin.name}}</h2>
-                            <button ng-click="pinRemove(pin.pinId)">Delete Pin</button>
-                            
+                        
                         </div>
                       
                 </div>
