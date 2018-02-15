@@ -26,6 +26,11 @@ angular.module("Throfolio", ["ngRoute","pw.canvas-painter"]) // include pw canva
             templateUrl: "partials/unauth-ref-view.html",
             controller: "RefCtrl"
         })
+        .when("/canvas/:boardId",{
+            templateUrl:"partials/canvas-view.html",
+            controller:"RefCtrl"
+
+        })
         .otherwise("/");
         //more routes for unauthenticated viewers to view specific profiles
 

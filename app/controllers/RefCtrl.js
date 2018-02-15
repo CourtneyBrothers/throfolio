@@ -9,7 +9,7 @@ angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $
             username: ""
           };
   
-      
+      $scope.boardId = $routeParams.boardId; // CB SCOPE BOARDID
   
           FbFactory.getPins($routeParams.boardId).then(data => {
             console.log("pins data", data);
@@ -113,9 +113,9 @@ angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $
 
       $scope.getBoardCover = () =>{
         FbFactory.getBoard($routeParams.boardId).then(data => {
-          console.log("data in getBoardCover", data);
+          // console.log("data in getBoardCover", data);
         $scope.boardCover = data.data.url;
-        console.log("scope.boardCover", $scope.boardCover);
+        // console.log("scope.boardCover", $scope.boardCover);
         });
       };
       
