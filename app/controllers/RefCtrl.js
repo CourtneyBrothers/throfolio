@@ -105,10 +105,12 @@ angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $
         } else {
 
 
-          
+
           $scope.save  = function(){
             html2CanvasAngular.renderBody().then(function(canvas){
               document.body.appendChild(canvas);
+              console.log("canvas from save", canvas);
+              console.log("url",canvas.toDataURL());
             });
           };
 
