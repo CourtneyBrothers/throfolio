@@ -1,5 +1,5 @@
 "use strict";
-angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $routeParams, $location, $route, $window,StorageFactory) {
+angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $routeParams, $location, $route, $window,StorageFactory,html2CanvasAngular ) {
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
           $scope.newPin = {
@@ -7,6 +7,12 @@ angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $
             name: "",
             url: "",
             username: ""
+          };
+
+          $scope.save  = function(){
+            html2CanvasAngular.renderBody().then(function(canvas){
+              document.body.appendChild(canvas);
+            });
           };
   
       $scope.boardId = $routeParams.boardId; // CB SCOPE BOARDID
@@ -97,6 +103,15 @@ angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $
     
   
         } else {
+
+
+          
+          $scope.save  = function(){
+            html2CanvasAngular.renderBody().then(function(canvas){
+              document.body.appendChild(canvas);
+            });
+          };
+
 
           $scope.boardId = $routeParams.boardId;
 
