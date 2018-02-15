@@ -98,6 +98,8 @@ angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $
   
         } else {
 
+          $scope.boardId = $routeParams.boardId;
+
             //get pins
           console.log("not logged in to see pins");
           console.log($routeParams.boardId, "route parms board id");
