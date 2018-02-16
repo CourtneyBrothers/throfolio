@@ -14,7 +14,8 @@ angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $
             uid: "",
             name: "",
             url: "",
-            username: ""
+            username: "",
+            boardId:""
           }
 
 
@@ -27,7 +28,7 @@ angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $
               $scope.newCanvas.uid = firebase.auth().currentUser.uid;
               $scope.newCanvas.username = firebase.auth().currentUser.displayName;
               $scope.newCanvas.url = canvasURL;
-              $scope.newPin.boardId = $routeParams.boardId;
+              $scope.newCanvas.boardId = $routeParams.boardId;
 
               FbFactory.addCanvas($scope.newCanvas).then(data =>{
                 console.log("new canvas", data);
