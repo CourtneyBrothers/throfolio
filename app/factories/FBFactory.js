@@ -155,7 +155,7 @@ angular.module("Throfolio").factory("FbFactory", ($http, $q) => {
         });
     }
 
-    function removeBoards(){
+    function removeBoards(FbId){
         return $q((resolve, reject) => {
             $http
                 .delete(`https://throfolio.firebaseio.com/pieces/${FbId}.json`)
