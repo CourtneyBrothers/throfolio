@@ -155,6 +155,33 @@ angular.module("Throfolio").factory("FbFactory", ($http, $q) => {
         });
     }
 
+    function removeBoards(){
+        return $q((resolve, reject) => {
+            $http
+                .delete(`https://throfolio.firebaseio.com/pieces/${FbId}.json`)
+                .then((data) => {
+                    resolve(data);
+                })
+                .catch((error) => {
+                    reject(error);
+                });
+        });
+    
+    }
+
+    function deletePins(pinId) {
+        return $q((resolve, reject) => {
+            $http
+                .delete(`https://throfolio.firebaseio.com/pins/${pinId}.json`)
+                .then((data) => {
+                    resolve(data);
+                })
+                .catch((error) => {
+                    reject(error);
+                });
+        });
+    }
+
     //don't need this call 
 
     // function getCoverCanvas(name){
@@ -175,6 +202,6 @@ angular.module("Throfolio").factory("FbFactory", ($http, $q) => {
 
    
 
-    return {addBoard, getBoards, getPins, addPin, getBoard, getAllBoards,getBoardsPublic, addCanvas, getCanvas};
+    return {addBoard, getBoards, getPins, addPin, getBoard, getAllBoards,getBoardsPublic, addCanvas, getCanvas, removeBoards, deletePins};
 
 });

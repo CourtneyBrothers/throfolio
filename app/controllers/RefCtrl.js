@@ -142,6 +142,15 @@ angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $
 
           // $scope.getCanvasTheOne();
 
+          $scope.deletePin = (pinId) => {
+            console.log("delete", pinId);
+            
+            FbFactory.deletePins(pinId) .then(() => {
+              
+            $route.reload(`portfolio/${$scope.newPin.boardId}`);;
+             });
+          }
+
         } else {
 
 
