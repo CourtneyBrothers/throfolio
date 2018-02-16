@@ -35,6 +35,7 @@ angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $
 
               });
 
+
             });
           };
   
@@ -123,8 +124,16 @@ angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $
                 
           };
 
+          $scope.getCanvasNames = () =>{
+            console.log("get canvas name");
+            FbFactory.getCanvas($routeParams.boardId).then(data => {
+              
+              console.log("canvas data in get canvas names", data.data);
+              $scope.canvases = data.data;
+            }
+          )};
           
-    
+          $scope.getCanvasNames(); //call names
   
         } else {
 
