@@ -91,6 +91,19 @@ angular.module("Throfolio").factory("FbFactory", ($http, $q) => {
         });
     }
 
+    function addCanvas(newCanvas) {
+        return $q((resolve, reject) => {
+            $http
+                .post(`https://throfolio.firebaseio.com/canvas.json`, JSON.stringify(newCanvas))
+                .then((data) => {
+                    resolve(data);
+                })
+                .catch((error) => {
+                    reject(error);
+                });
+        });
+    }
+
 
     function getBoard(boardId) {
         return $q((resolve, reject) => {
@@ -131,6 +144,6 @@ angular.module("Throfolio").factory("FbFactory", ($http, $q) => {
 
    
 
-    return {addBoard, getBoards, getPins, addPin, getBoard, getAllBoards,getBoardsPublic};
+    return {addBoard, getBoards, getPins, addPin, getBoard, getAllBoards,getBoardsPublic, addCanvas};
 
 });

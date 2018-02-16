@@ -9,9 +9,31 @@ angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $
             username: ""
           };
 
+          //canvas object
+          $scope.newCanvas = {
+            uid: "",
+            name: "",
+            url: "",
+            username: ""
+          }
+
+
           $scope.save  = function(){
             html2CanvasAngular.renderBody().then(function(canvas){
-              document.body.appendChild(canvas);
+              // document.body.appendChild(canvas); stop appenings
+              let canvasURL = canvas.toDataURL();
+              console.log("made url", canvas.toDataURL());
+//CB add this
+              $scope.newCanvas.uid = firebase.auth().currentUser.uid;
+              $scope.newCanvas.username = firebase.auth().currentUser.displayName;
+              $scope.newCanvas.url = canvasURL;
+              $scope.newPin.boardId = $routeParams.boardId;
+
+              FbFactory.addCanvas($scope.newCanvas).then(data =>{
+                console.log("new canvas", data);
+
+              });
+
             });
           };
   
@@ -83,6 +105,7 @@ angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $
                 $scope.newPin.uid = firebase.auth().currentUser.uid;
                 $scope.newPin.username = firebase.auth().currentUser.displayName;
                 $scope.newPin.url = url;
+                // TODO $scope.newPin.name = 
 
                 console.log($scope.newPin, "new PIn");
 
@@ -108,7 +131,7 @@ angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $
 
           $scope.save  = function(){
             html2CanvasAngular.renderBody().then(function(canvas){
-              document.body.appendChild(canvas);
+              // document.body.appendChild(canvas); stop appending
               console.log("canvas from save", canvas);
               console.log("url",canvas.toDataURL());
             });
