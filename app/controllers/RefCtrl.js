@@ -33,7 +33,7 @@ angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $
 
               FbFactory.addCanvas($scope.newCanvas).then(data =>{
                 console.log("new canvas", data);
-
+                $route.reload(`canvas/${$scope.newCanvas.boardId}`);
               });
           };
   
