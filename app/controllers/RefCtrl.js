@@ -20,7 +20,8 @@ angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $
 
 
           $scope.save  = function(){
-            html2CanvasAngular.renderBody().then(function(canvas){
+            // html2CanvasAngular.renderBody().then(function(canvas){
+              let canvas = document.getElementById("pwCanvasMain");
               // document.body.appendChild(canvas); stop appenings
               let canvasURL = canvas.toDataURL();
               console.log("made url", canvas.toDataURL());
@@ -34,9 +35,6 @@ angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $
                 console.log("new canvas", data);
 
               });
-
-
-            });
           };
   
       $scope.boardId = $routeParams.boardId; // CB SCOPE BOARDID
@@ -148,13 +146,14 @@ angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $
 
 
 
-          $scope.save  = function(){
-            html2CanvasAngular.renderBody().then(function(canvas){
-              // document.body.appendChild(canvas); stop appending
-              console.log("canvas from save", canvas);
-              console.log("url",canvas.toDataURL());
-            });
-          };
+          // $scope.save  = function(){
+          //   // html2CanvasAngular.renderBody().then(function(canvas){
+          //     // document.body.appendChild(canvas); stop appending
+          //     let canvas = document.getElementById("pwCanvasMain");
+          //     console.log("canvas from save", canvas);
+          //     console.log("url",canvas.toDataURL());
+          //   });
+          // };
 
 
           $scope.boardId = $routeParams.boardId;
