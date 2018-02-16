@@ -134,7 +134,16 @@ angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $
           )};
           
           $scope.getCanvasNames(); //call names
-  
+          
+
+          // $scope.getCanvasTheOne = () =>{
+          //   FbFactory.getCoverCanvas($routeParams.boardId).then(data => {
+          //     console.log(" conver canvas data", data);
+          //   })
+          // }
+
+          // $scope.getCanvasTheOne();
+
         } else {
 
 

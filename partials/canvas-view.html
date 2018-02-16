@@ -1,8 +1,9 @@
 <div class = "pinContainer" >
 
     <div id="canvasList">
+        <h1>canvases</h1>
             <div ng-repeat="canvas in canvases">
-                <h2>{{canvas.name}}</h2>
+                <h2><a ng-href="#!/canvases/{{canvas.boardId}}">{{canvas.name}}</a></h2>
     </div>
 
 

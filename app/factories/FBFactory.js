@@ -155,6 +155,23 @@ angular.module("Throfolio").factory("FbFactory", ($http, $q) => {
         });
     }
 
+    //don't need this call 
+
+    // function getCoverCanvas(name){
+    //     return $q((resolve, reject) => {
+    //         $http
+    //             .get(`https://throfolio.firebaseio.com/canvas.json?orderBy="boardId"&equalTo="${$routeParams.boardId}"`)
+    //             .then((data) => {
+    //                 resolve(data);
+    //                 console.log(" canvas  name data in cover",data);
+    //             })
+    //             .catch((error) => {
+    //                 reject(error);
+    //                 console.log("eroor",error);
+    //             });
+    //     });
+    // }
+
 
    
 
