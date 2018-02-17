@@ -23,7 +23,7 @@
         options="{undo: true, width: 1000, height: 2000, color: selectedColor, lineWidth: selectedLineWidth, backgroundColor:'hsla(50, 33%, 25%, 0.01)}" id="canvas"></div> -->
         <div pw-color-selector="['#000', '#9CB199','#153974','#fff']" color="selectedColor"></div>
         <input type="range" min="1" max="50" ng-model="selectedLineWidth" class="lineWidthSelector">{{selectedLineWidth}}
-            <div pw-canvas options="{width: 1000, height:2000, color: model.myColor, backgroundColor:'hsla(50, 33%, 25%, 0.01)', lineWidth: selectedLineWidth}" id="canvas"></div>
+            <div pw-canvas options="{width: 1000, height:2000, color: selectedColor, backgroundColor:'hsla(50, 33%, 25%, 0.01)', lineWidth: selectedLineWidth}" id="canvas"></div>
            
             <!-- <div pw-color-selector="['#000', '#00f', '#0f0', '#f00']" color="model.myColor"></div> --> 
             
