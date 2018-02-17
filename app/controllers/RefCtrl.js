@@ -1,5 +1,5 @@
 "use strict";
-angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $routeParams, $location, $route, $window,StorageFactory,html2CanvasAngular ) {
+angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $routeParams, $location, $route, $window,StorageFactory) {
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
           $scope.newPin = {
@@ -16,7 +16,7 @@ angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $
             url: "",
             username: "",
             boardId:""
-          }
+          };
 
 
           $scope.save  = function(){
@@ -129,7 +129,8 @@ angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $
               console.log("canvas data in get canvas names", data.data);
               $scope.canvases = data.data;
             }
-          )};
+          );
+        };
           
           $scope.getCanvasNames(); //call names
           
@@ -147,9 +148,9 @@ angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $
             
             FbFactory.deletePins(pinId) .then(() => {
               
-            $route.reload(`portfolio/${$scope.newPin.boardId}`);;
+            $route.reload(`portfolio/${$scope.newPin.boardId}`);
              });
-          }
+          };
 
         } else {
 
