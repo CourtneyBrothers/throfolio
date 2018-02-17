@@ -91,6 +91,33 @@ angular.module("Throfolio").factory("FbFactory", ($http, $q) => {
         });
     }
 
+    function addCanvas(newCanvas) {
+        return $q((resolve, reject) => {
+            $http
+                .post(`https://throfolio.firebaseio.com/canvas.json`, JSON.stringify(newCanvas))
+                .then((data) => {
+                    resolve(data);
+                })
+                .catch((error) => {
+                    reject(error);
+                });
+        });
+    }
+
+    function getCanvas(boardId){
+        return $q((resolve, reject) => {
+            $http
+                .get(`https://throfolio.firebaseio.com/canvas.json?orderBy="boardId"&equalTo="${boardId}"`)
+                .then((data) => {
+                    resolve(data);
+                    console.log(" canvas data in fbf",data);
+                })
+                .catch((error) => {
+                    reject(error);
+                    console.log("eroor",error);
+                });
+        });
+    }
 
     function getBoard(boardId) {
         return $q((resolve, reject) => {
@@ -128,9 +155,53 @@ angular.module("Throfolio").factory("FbFactory", ($http, $q) => {
         });
     }
 
+    function removeBoards(FbId){
+        return $q((resolve, reject) => {
+            $http
+                .delete(`https://throfolio.firebaseio.com/pieces/${FbId}.json`)
+                .then((data) => {
+                    resolve(data);
+                })
+                .catch((error) => {
+                    reject(error);
+                });
+        });
+    
+    }
+
+    function deletePins(pinId) {
+        return $q((resolve, reject) => {
+            $http
+                .delete(`https://throfolio.firebaseio.com/pins/${pinId}.json`)
+                .then((data) => {
+                    resolve(data);
+                })
+                .catch((error) => {
+                    reject(error);
+                });
+        });
+    }
+
+    //don't need this call 
+
+    // function getCoverCanvas(name){
+    //     return $q((resolve, reject) => {
+    //         $http
+    //             .get(`https://throfolio.firebaseio.com/canvas.json?orderBy="boardId"&equalTo="${$routeParams.boardId}"`)
+    //             .then((data) => {
+    //                 resolve(data);
+    //                 console.log(" canvas  name data in cover",data);
+    //             })
+    //             .catch((error) => {
+    //                 reject(error);
+    //                 console.log("eroor",error);
+    //             });
+    //     });
+    // }
+
 
    
 
-    return {addBoard, getBoards, getPins, addPin, getBoard, getAllBoards,getBoardsPublic};
+    return {addBoard, getBoards, getPins, addPin, getBoard, getAllBoards,getBoardsPublic, addCanvas, getCanvas, removeBoards, deletePins};
 
 });

@@ -70,7 +70,23 @@ angular.module("Throfolio").controller("PortCtrl", function ($scope, FbFactory, 
                     });
             };
             
-  
+
+            
+            $scope.deleteBoard = (boardId) => {
+                console.log("boardId", boardId); 
+                FbFactory.removeBoards(boardId)
+                    .then((data) => {
+                        FbFactory.getPins(boardId)
+                            .then((data) => {
+                                data.forEach((board) => {
+                                    FbFactory.deletePins(board.pinId)
+                                        .then(() => {
+                                            $route.reload("/portfolio");
+                                        });
+                                });
+                            });
+                    });
+            };
             
 
        

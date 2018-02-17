@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module("Throfolio", ["ngRoute"])
+angular.module("Throfolio", ["ngRoute","pw.canvas-painter"]) // include pw canvas painter
     // .constant('_') //may want lodash maybe not
 
     //These routes ( .when x 3 are for user interface)
@@ -25,6 +25,16 @@ angular.module("Throfolio", ["ngRoute"])
         .when("/gettheref/:boardId",{ ///TODO
             templateUrl: "partials/unauth-ref-view.html",
             controller: "RefCtrl"
+        })
+        .when("/canvas/:boardId",{
+            templateUrl:"partials/canvas-view.html",
+            controller:"RefCtrl"
+
+        })
+        .when("/canvases/:boardId",{
+            templateUrl:"partials/made-canvas-view.html",
+            controller:"RefCtrl"
+
         })
         .otherwise("/");
         //more routes for unauthenticated viewers to view specific profiles

@@ -1,5 +1,7 @@
 <div class ="portfolioContainer">
 
+       
+
         <div class="band">  <!-- cb add class for grid styling -->
             <div class="newPortfolioImage">
                     <input type="file" id="fileButton" onchange="angular.element(this).scope().addImageToCloud(event.currentTarget.files[0])" ng-model="file" /> <!-- for cloud upload  function--> 
@@ -13,7 +15,7 @@
                 <div class = "pinBoard">
                     <h1><a ng-href="#!/portfolio/{{board.boardId}}">{{board.name}}</a></h1>
                         <img src={{board.url}} alt="?" draggable="true">
-                        <button ng-click="boardDestroy(board.boardId)">Delete Board</button>
+                        <button ng-click="deleteBoard(board.boardId)">Delete Board</button>
                     </div>
                 </div>
             </div>
