@@ -9,6 +9,9 @@
 
     <button ng-click="save()">save  canvas!</button>
     <div pw-color-selector="['#000', '#fff','#f00']" color="model.myColor"></div>
+    
+    <!-- cb add input type -->
+    <input type="range" min="1" max="50" ng-model="selectedLineWidth" class="lineWidthSelector ng-valid ng-dirty ng-valid-parse ng-touched">
 
     <input type="text" placeholder="Canvas Name" ng-model="newCanvas.name"> <!-- canvas name?-->
     
