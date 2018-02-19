@@ -153,7 +153,23 @@ angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $
           };
 
         } else {
+            $scope.save  = function(){
+            // html2CanvasAngular.renderBody().then(function(canvas){
+              let canvas = document.getElementById("pwCanvasMain");
+              // document.body.appendChild(canvas); stop appenings
+              let canvasURL = canvas.toDataURL();
+              console.log("made url", canvas.toDataURL());
+//CB add this
+              $scope.newCanvas.uid = firebase.auth().currentUser.uid;
+              $scope.newCanvas.username = firebase.auth().currentUser.displayName;
+              $scope.newCanvas.url = canvasURL;
+              $scope.newCanvas.boardId = $routeParams.boardId;
 
+              FbFactory.addCanvas($scope.newCanvas).then(data =>{
+                console.log("new canvas", data);
+                $route.reload(`canvas/${$scope.newCanvas.boardId}`);
+              });
+          };
 
 
           // $scope.save  = function(){
