@@ -1,9 +1,10 @@
 <div class = "pinContainer" >
 
     <div id="canvasList">
-        <h1>canvases</h1>
-            <div ng-repeat="canvas in canvases">
-                <h2><a ng-href="#!/canvases/{{canvas.boardId}}">{{canvas.name}}</a></h2>
+        <h1> my saved canvases</h1>
+            <ul class="canvas-list" ng-repeat="canvas in canvases">
+                <li><a ng-href="#!/canvases/{{canvas.boardId}}">{{canvas.name}}</a></li>
+            </ul>
     </div>
 
 
@@ -17,11 +18,14 @@
     <!-- <div pw-color-selector="['#000', '#fff','#f00',lineWidth: selectedLineWidth]" color="model.myColor"></div>  -->
 
     <input type="text" placeholder="Canvas Name" ng-model="newCanvas.name"> <!-- canvas name?-->
-    
-         <!-- <div pw-canvas
-        version="ctrl.version"
-        options="{undo: true, width: 1000, height: 2000, color: selectedColor, lineWidth: selectedLineWidth, backgroundColor:'hsla(50, 33%, 25%, 0.01)}" id="canvas"></div> -->
-        <div pw-color-selector="['#000', '#9CB199','#153974','#fff']" color="selectedColor"></div>
+   
+        <div ng-click="widgetExpanded =! widgetExpanded" class="palette">Click to choose colors
+        </div>
+        <div ng-slide-down="widgetExpanded" lazy-render duration="1">
+            <div pw-color-selector="['#000', '#9CB199','#153974','#fff']" color="selectedColor"></div>
+        </div>
+         
+
         <input type="range" min="0.01" max="4" ng-model="selectedLineWidth" class="lineWidthSelector">{{selectedLineWidth}}
         <div class="undo">
                 <button ng-click="ctrl.undo()"
