@@ -139,3 +139,15 @@ ul.canvas-list {
     grid-template-rows: .25fr 1fr 1fr .3fr;
 }
 
+.canvasContainer{
+    position: absolute;
+    z-index: 1;
+    margin-top: 30px;
+}
+
+.pinBand {
+    margin-top: 160px;
+    margin-left: 20rem;
+    position: absolute;
+    z-index: -20;
+}
