@@ -134,14 +134,16 @@ angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $
           
           $scope.getCanvasNames(); //call names
           
+//took out getting single canvas 
+          // $scope.getCanvasTheOne = (canvasName) => {
+          //   console.log(canvasName, "canvas name");
+          //   FbFactory.getCoverCanvas(canvasName).then(data => {
+          //     console.log(" conver canvas data", data.data);
+          //     $scope.savedCanvas = data.data;
+          //     console.log($scope.savedCanvas, "savedCanvas");
+          //   });
+          // };
 
-          // $scope.getCanvasTheOne = () =>{
-          //   FbFactory.getCoverCanvas($routeParams.boardId).then(data => {
-          //     console.log(" conver canvas data", data);
-          //   })
-          // }
-
-          // $scope.getCanvasTheOne();
 
           $scope.deletePin = (pinId) => {
             console.log("delete", pinId);
@@ -151,6 +153,9 @@ angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $
             $route.reload(`portfolio/${$scope.newPin.boardId}`);
              });
           };
+
+
+
 
         } else {
             $scope.save  = function(){

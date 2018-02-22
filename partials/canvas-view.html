@@ -7,23 +7,16 @@
             </ul>
     </div>
 
-
-    <!-- <div pw-canvas
-    version="ctrl.version"
-    options="{undo: true, width: 400, height: 300, color: selectedColor, lineWidth: selectedLineWidth}"></div>
-    <div pw-color-selector="['#000', '#9CB199','#153974','#fff']" color="selectedColor"></div>
-    <input type="range" min="1" max="50" ng-model="selectedLineWidth" class="lineWidthSelector">{{selectedLineWidth}} -->
-
      <button ng-click="save()">save  canvas!</button>
     <!-- <div pw-color-selector="['#000', '#fff','#f00',lineWidth: selectedLineWidth]" color="model.myColor"></div>  -->
 
     <input type="text" placeholder="Canvas Name" ng-model="newCanvas.name"> <!-- canvas name?-->
    
-        <div ng-click="widgetExpanded =! widgetExpanded" class="palette">Click to choose colors
+        <!-- <div ng-click="widgetExpanded =! widgetExpanded" class="palette">Click to choose colors
         </div>
-        <div ng-slide-down="widgetExpanded" lazy-render duration="1">
+        <div ng-slide-down="widgetExpanded"> ng-slide breaks color picker --> 
             <div pw-color-selector="['#000', '#9CB199','#153974','#fff']" color="selectedColor"></div>
-        </div>
+        <!-- </div> -->
          
 
         <input type="range" min="0.01" max="4" ng-model="selectedLineWidth" class="lineWidthSelector">{{selectedLineWidth}}
