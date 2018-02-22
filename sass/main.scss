@@ -54,11 +54,11 @@ body {
 // }
 
 
-#canvas {
-    position: absolute;
+// #canvas {
+//     position: absolute;
 
 
-}
+// }
 
 .pwCanvasPaint canvas:first-child {
     // box-shadow: 2px 2px 8px rgba(0,0,0,0.1), -1px -1px 4px rgba(0,0,0,0.1);
@@ -89,10 +89,52 @@ body {
 //   }
 
 
-  .lineWidthSelector {
-    width: 33%;
-  }
+ 
 
-  .pinContainer {
+  .canvasContainer {
       margin: 25px 50px 75px 100px;
   }
+
+  .tools {
+      grid-row: 2/6;
+      grid-column: 1/1;
+
+  }
+  .color-selector {
+      grid-row: 1/4;
+      grid-column:1/5;
+  }
+
+.canvas-list {
+    grid-row:0/4;
+    grid-column: 7/7;
+
+}
+.lineWidthSelector {
+    grid-row: 0/4;
+    grid-column: 5/7;
+    transform: rotate(-90deg);
+}
+
+.lineWidthSelector input {
+
+    transform: rotate(-90deg);
+}
+
+.canvas-view{
+  
+    grid-row: 2/4;
+    grid-column: 2/5;
+}
+
+.saveCanvas {
+    grid-row: 4/4;
+    grid-column: 1/7;
+
+}
+
+.canvasGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+}

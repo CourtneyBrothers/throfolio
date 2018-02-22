@@ -1,73 +1,50 @@
-<div class = "pinContainer" >
+<div class = "canvasContainer" >
+    <div class="canvasGrid">
+        <div id="canvasList" class="canvas-list">
+            <h1 > my saved canvases</h1>
+                <ul ng-repeat="canvas in canvases">
+                    <li><a ng-href="#!/canvases/{{canvas.boardId}}">{{canvas.name}}</a></li>
+                </ul>
+        </div>
 
-    <div id="canvasList">
-        <h1> my saved canvases</h1>
-            <ul class="canvas-list" ng-repeat="canvas in canvases">
-                <li><a ng-href="#!/canvases/{{canvas.boardId}}">{{canvas.name}}</a></li>
+        <div class="saveCanvas">
+             <button ng-click="save()">save  canvas!</button>
+
+            <input type="text" placeholder="Canvas Name" ng-model="newCanvas.name" > <!-- canvas name?-->
+        </div>
+
+        <div pw-color-selector="['#000', '#9CB199','#153974','#fff']" color="selectedColor" class="color-selector"></div>
+            
+
+        <input type="range" min="0.01" max="4" ng-model="selectedLineWidth" class="lineWidthSelector" class="slider">{{selectedLineWidth}}
+        
+        <div class="tools">
+            <ul>
+                <li>pen</li>
+                <li>brush</li>
+                <li>crayon</li>
+                <li>chalk</li>
             </ul>
-    </div>
-
-     <button ng-click="save()">save  canvas!</button>
-    <!-- <div pw-color-selector="['#000', '#fff','#f00',lineWidth: selectedLineWidth]" color="model.myColor"></div>  -->
-
-    <input type="text" placeholder="Canvas Name" ng-model="newCanvas.name"> <!-- canvas name?-->
-   
-        <!-- <div ng-click="widgetExpanded =! widgetExpanded" class="palette">Click to choose colors
         </div>
-        <div ng-slide-down="widgetExpanded"> ng-slide breaks color picker --> 
-            <div pw-color-selector="['#000', '#9CB199','#153974','#fff']" color="selectedColor"></div>
-        <!-- </div> -->
-         
 
-        <input type="range" min="0.01" max="4" ng-model="selectedLineWidth" class="lineWidthSelector">{{selectedLineWidth}}
-        <div class="undo">
-                <button ng-click="ctrl.undo()"
-                        ng-disabled="ctrl.version < 1">Undo (Version {{ctrl.version}})</button>
-              </div>
-            <div pw-canvas options="{undo: true, width: 1000, height:2000, color: selectedColor, backgroundColor:'hsla(50, 33%, 25%, 0.01)', lineWidth: selectedLineWidth}" id="canvas"></div>
-           
-            <!-- <div pw-color-selector="['#000', '#00f', '#0f0', '#f00']" color="model.myColor"></div> --> 
-            
-            <!-- <div pw-canvas options="{width: 200, height:200, color: '#000', backgroundColor:'hsla(50, 33%, 25%, 0.01)', lineWidth:0.5}" id="canvas"></div> -->
-    
-    
-        <h1>Board: {{boardName}}</h1>
-        <!-- <a href="#!/gettheref/markup">Mark up!</a> -->
-       
-    
-             
-    
-            <div class="pinBand"><!-- cb add class band for grid styling -->
-                <!-- <div id="newPinCard" class ="pinCard"> <! cb move thing into card grid -->
-                    <!-- <input type="file" id="pinButton" onchange="angular.element(this).scope().addPinToCloud(event.currentTarget.files[0])" ng-model="file" />
-    
-                        <input type="text" placeholder="Pin Name" ng-model="newPin.name">
-                        <br>
-                        <input type="text" placeholder="Image URL" ng-model="newPin.url">
-                        <button ng-click="savePin()">Add Pin</button>
-                    </div> --> 
-                <div ng-repeat="pin in pins"> 
-                    <div class="pinCard" id="pin"> <!-- cb add class card for grid styling -->
-                        <img src="{{pin.url}}" alt="?" class="pinThumb">
-                        <div class="pinHeader">
-                            <h2>{{pin.name}}</h2>
-                            <button ng-click="pinRemove(pin.pinId)">Delete Pin</button>
-                            
+        <div pw-canvas options="{width: 500, height:400, color: selectedColor, backgroundColor:'hsla(50, 33%, 25%, 0.01)', lineWidth: selectedLineWidth}" id="canvas" class="canvas-view"></div>
+
+        
+        <!-- <h1>Board: {{boardName}}</h1> -->
+
+        <!-- <div class="pinBand"> remove to check grid situation
+            <div ng-repeat="pin in pins"> 
+                        <div class="pinCard" id="pin"> 
+                            <img src="{{pin.url}}" alt="?" class="pinThumb">
+                            <div class="pinHeader">
+                                <h2>{{pin.name}}</h2>
+                            </div>
+                            <button ng-click="pinRemove(pin.pinId)">Delete Pin</button> 
                         </div>
-    
-                       
-                </div>
-    
-           
             </div>
-            <div class="pinCard" id="mainImage"> <!-- cb add board image into ref view for comp -->
-                           
-                <img src="{{boardCover}}" alt="?" class="pinCover">
-                    <!-- <h2>{{pin.name}}</h2> -->
-                   
-    
-            
-                    
-                </div>
-        </div>
-     </div>
+            <div class="pinCard" id="mainImage">  
+                    <img src="{{boardCover}}" alt="?" class="pinCover">
+            </div>
+        </div> -->
+    </div>
+</div>
