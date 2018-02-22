@@ -13,10 +13,12 @@
             <input type="text" placeholder="Canvas Name" ng-model="newCanvas.name" > <!-- canvas name?-->
         </div>
 
-        <div pw-color-selector="['#000', '#9CB199','#153974','#fff']" color="selectedColor" class="color-selector"></div>
+        <div pw-color-selector="['#000', '#9CB199','#153974','#fff','#ff0000','	#ffb6c1','#D3D3D3','#A9A9A9','#ADD8E6']" color="selectedColor" class="color-selector"></div>
             
 
-        <input type="range" min="0.01" max="4" ng-model="selectedLineWidth" class="lineWidthSelector" class="slider">{{selectedLineWidth}}
+        <input type="range" min="0.01" max="4" ng-model="selectedLineWidth" class="lineWidthSelector" class="slider">
+        
+        
         
         <div class="tools">
             <ul>
@@ -27,9 +29,10 @@
             </ul>
         </div>
 
-        <div pw-canvas options="{width: 500, height:400, color: selectedColor, backgroundColor:'hsla(50, 33%, 25%, 0.01)', lineWidth: selectedLineWidth}" id="canvas" class="canvas-view"></div>
+        <div pw-canvas options="{width: 900, height:400, color: selectedColor, backgroundColor:'hsla(50, 33%, 25%, 0.01)', lineWidth: selectedLineWidth}" id="canvas" class="canvas-view"></div>
 
-        
+        <div class="selected">selected width: {{selectedLineWidth}}</div>
+
         <!-- <h1>Board: {{boardName}}</h1> -->
 
         <!-- <div class="pinBand"> remove to check grid situation
@@ -45,6 +48,22 @@
             <div class="pinCard" id="mainImage">  
                     <img src="{{boardCover}}" alt="?" class="pinCover">
             </div>
-        </div> -->
+        </div>  -->
     </div>
 </div>
+
+<div class="pinBand"> 
+        <div ng-repeat="pin in pins"> 
+                    <div class="pinCard" id="pin"> 
+                        <img src="{{pin.url}}" alt="?" class="pinThumb">
+                        <div class="pinHeader">
+                            <h2>{{pin.name}}</h2>
+                        </div>
+                        <button ng-click="pinRemove(pin.pinId)">Delete Pin</button> 
+                    </div>
+        </div>
+        <div class="pinCard" id="mainImage">  
+                <img src="{{boardCover}}" alt="?" class="pinCover">
+        </div>
+    </div> 
+
