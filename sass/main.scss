@@ -18,7 +18,10 @@ a {
 
 //canvas list styling 
 
-
+ul.nav{
+    list-style: none;
+    
+}
 
 ul.canvas-list {
     list-style: none;
@@ -79,11 +82,13 @@ ul.canvas-list {
     width: 4rem;
     height: 4rem;
     margin-right: 20px;
-    box-shadow: 2px 3px 2px rgba(0,0,0,0.2);
+    box-shadow: inset 0 0 9px rgb(241, 236, 236);
     display: inline-block;
+
   }
+
   .pwColor.active {
-    box-shadow: 2px 3px 2px rgba(0,0,0,0.2);
+    box-shadow: 2px 3px 2px rgb(255, 255, 255);
   }
 
 
@@ -106,6 +111,7 @@ ul.canvas-list {
 .canvas-list {
     grid-row:1/4;
     grid-column: 7/7;
+    padding-left: 5px;
 
 }
 .lineWidthSelector {
@@ -135,14 +141,16 @@ ul.canvas-list {
 
 .canvasGrid {
     display: grid;
-    grid-template-columns: .5fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: .5fr 1fr 1fr 1fr 1fr .75fr;
     grid-template-rows: .25fr 1fr 1fr .3fr;
+
 }
 
 .canvasContainer{
     position: absolute;
     z-index: 1;
     margin-top: 30px;
+    margin-right: 15px;
 }
 
 .pinBand {

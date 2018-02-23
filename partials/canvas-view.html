@@ -19,7 +19,7 @@
         <input type="range" min="0.01" max="4" ng-model="selectedLineWidth" class="lineWidthSelector" class="slider">
         
         
-        
+<!--          post -mvp
         <div class="tools">
             <ul>
                 <li>pen</li>
@@ -27,7 +27,7 @@
                 <li>crayon</li>
                 <li>chalk</li>
             </ul>
-        </div>
+        </div> -->
 
         <div pw-canvas options="{width: 900, height:1000, color: selectedColor, backgroundColor:'hsla(50, 33%, 25%, 0.01)', lineWidth: selectedLineWidth}" id="canvas" class="canvas-view"></div>
 
@@ -59,7 +59,6 @@
                         <div class="pinHeader">
                             <h2>{{pin.name}}</h2>
                         </div>
-                        <button ng-click="pinRemove(pin.pinId)">Delete Pin</button> 
                     </div>
         </div>
         <div class="pinCard" id="mainImage">  
