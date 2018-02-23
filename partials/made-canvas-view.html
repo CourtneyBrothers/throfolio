@@ -1,16 +1,12 @@
 
 <div class = "pinContainer" >
 
-        <div id="canvasList">
+        <div id="canvasList" class="list-of-made-canvases">
             <h1>canvases</h1>
                 <div ng-repeat="canvas in canvases">
                     <h2>{{canvas.name}}</h2>
-                    <img src="{{canvas.url}}"alt="?" class="pinThumb">
-        </div>
-        
-    
-       
-        
+                    <img src="{{canvas.url}}"alt="?" class="madeCanvas">
+        </div>    
             <!-- <h1>Board: {{boardName}}</h1> -->
             <!-- <a href="#!/gettheref/markup">Mark up!</a> -->
         
@@ -26,9 +22,8 @@
                
                 </div>
 
-                <div class="canvasBackground" id="mainImage"> <!-- cb add board image into ref view for comp --> 
-                    <img src="{{boardCover}}" alt="?" class="pinCover">
-
+                <div class="madeCanvasBackground"> <!-- cb add board image into ref view for comp --> 
+                    <img src="{{boardCover}}" alt="?">
                 </div>
             </div>
          </div>

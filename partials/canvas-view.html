@@ -16,7 +16,7 @@
         <div pw-color-selector="['#000', '#9CB199','#153974','#fff','#ff0000','	#ffb6c1','#D3D3D3','#A9A9A9','#ADD8E6']" color="selectedColor" class="color-selector"></div>
             
 
-        <input type="range" min="0.01" max="4" ng-model="selectedLineWidth" class="lineWidthSelector" class="slider">
+        <input type="range" min="0.01" max="20" ng-model="selectedLineWidth" class="lineWidthSelector" class="slider">
         
         
 <!--          post -mvp
@@ -29,7 +29,7 @@
             </ul>
         </div> -->
 
-        <div pw-canvas options="{width: 900, height:1000, color: selectedColor, backgroundColor:'hsla(50, 33%, 25%, 0.01)', lineWidth: selectedLineWidth}" id="canvas" class="canvas-view"></div>
+        <div pw-canvas options="{width: 960, height:1000, color: selectedColor, backgroundColor:'hsla(50, 33%, 25%, 0.01)', lineWidth: selectedLineWidth}" id="canvas" class="canvas-view"></div>
 
         <div class="selected">selected width: {{selectedLineWidth}}</div>
 
@@ -52,17 +52,17 @@
     </div>
 </div>
 
-<div class="pinBand"> 
-        <div ng-repeat="pin in pins"> 
+<div class="canvasBand"> 
+        <!-- <div ng-repeat="pin in pins"> 
                     <div class="pinCard" id="pin"> 
                         <img src="{{pin.url}}" alt="?" class="pinThumb">
                         <div class="pinHeader">
                             <h2>{{pin.name}}</h2>
                         </div>
                     </div>
-        </div>
-        <div class="pinCard" id="mainImage">  
-                <img src="{{boardCover}}" alt="?" class="pinCover">
+        </div> -->
+        <div class="bckground" id="mainImage">  
+                <img src="{{boardCover}}" alt="?" class="bckimg">
         </div>
     </div> 
 
