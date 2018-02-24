@@ -1,40 +1,23 @@
 
 
-<div class = "pinContainer" >
 
-        <div id="canvasList" class="list-of-made-canvases">
-            <h1>canvases</h1>
-                <div ng-repeat="canvas in canvases">
-                    <h1>{{canvas.name}}</h1>
-                    <img ng-src="{{canvas.url}}" alt="?" class="madeCanvas">
-                
-        </div>   
-    
+<div class="madeCanvasGrid">
+    <div class = "pinContainer" >
 
-            <!-- <!<h1>Board: {{boardName}}</h1> -->
-            <!-- <a href="#!/gettheref/markup">Mark up!</a> -->
-        
-                <!-- <div class="canvas">cb add class band for grid styling -->
-                    <!-- <div ng-repeat="pin in pins">  -->
-                        <!-- <div class="pinCard" id="pin"> cb add class card for grid styling -->
-                            <!-- <img src="{{pin.url}}" alt="?" class="pinThumb"> -->
-                            <!-- <div class="pinHeader"> -->
-                                <!-- <h2>{{pin.name}}</h2> -->
-                            <!-- </div> -->
-                    <!-- </div> -->
-        
-               
-                </div>
-
-                <div class="madeCanvasBackground"> <!-- cb add board image into ref view for comp --> 
-                    <img src="{{boardCover}}" alt="?" ng-hide="showme">
-                </div>
-            
-                <!-- <div class="plain">
-                    <h1 ng-click="showme=false">plain sketch</h1>
-                </div> -->
+            <div id="canvasList" class="list-of-made-canvases">
+                <h1>canvases</h1>
+                    <div ng-repeat="canvas in canvases">
+                        <!-- <h1>{{canvas.name}}</h1> -->
+                        <img ng-src="{{canvas.url}}" alt="?" class="madeCanvas">
+                    </div>   
             </div>
-         </div>
+        </div>
+
+            <div class="madeCanvasBackground"> <!-- cb add board image into ref view for comp --> 
+                <img src="{{boardCover}}" alt="?" ng-hide="showme">
+            </div>
+        </div>
+
   
 
     <!-- <div id="canvasList" class="list-of-made-canvases">

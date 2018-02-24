@@ -36,6 +36,10 @@ angular.module("Throfolio", ["ngRoute","pw.canvas-painter", 'ng-slide-down']) //
             controller:"RefCtrl"
 
         })
+        .when("/sketches/:boardId",{
+            templateUrl:"partials/sketches-view.html",
+            controller:"RefCtrl"
+        })
         .otherwise("/");
         //more routes for unauthenticated viewers to view specific profiles
 

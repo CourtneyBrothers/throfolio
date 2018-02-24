@@ -180,6 +180,7 @@ ul.canvas-list {
     top: 35px;
     left: 250px;
     z-index: 1;
+    border: 2px solid red;
    
 }
 
@@ -188,6 +189,7 @@ ul.canvas-list {
     top: 25px;
     left: 25px;
     z-index: 2;
+    border: 2px solid black;
    
 }
 
@@ -196,3 +198,6 @@ ul.canvas-list {
     z-index:12;
 }
 
+.madeCanvasGrid{
+    background: rgb(179, 174, 174);
+}
