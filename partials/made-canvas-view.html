@@ -1,13 +1,17 @@
 
+
 <div class = "pinContainer" >
 
         <div id="canvasList" class="list-of-made-canvases">
             <h1>canvases</h1>
                 <div ng-repeat="canvas in canvases">
-                    <h2>{{canvas.name}}</h2>
-                    <img src="{{canvas.url}}"alt="?" class="madeCanvas">
-        </div>    
-            <!-- <h1>Board: {{boardName}}</h1> -->
+                    <h1>{{canvas.name}}</h1>
+                    <img ng-src="{{canvas.url}}" alt="?" class="madeCanvas">
+                
+        </div>   
+    
+
+            <!-- <!<h1>Board: {{boardName}}</h1> -->
             <!-- <a href="#!/gettheref/markup">Mark up!</a> -->
         
                 <!-- <div class="canvas">cb add class band for grid styling -->
@@ -23,8 +27,20 @@
                 </div>
 
                 <div class="madeCanvasBackground"> <!-- cb add board image into ref view for comp --> 
-                    <img src="{{boardCover}}" alt="?">
+                    <img src="{{boardCover}}" alt="?" ng-hide="showme">
                 </div>
+            
+                <!-- <div class="plain">
+                    <h1 ng-click="showme=false">plain sketch</h1>
+                </div> -->
             </div>
          </div>
   
+
+    <!-- <div id="canvasList" class="list-of-made-canvases">
+            <h1>canvases</h1>
+                <div ng-repeat="canvas in canvases">
+                    <h1 ng-click="canvasShow != canvasShow">{{canvas.name}}</h1>
+                    <img ng-src="{{canvas.url}}" alt="?" class="madeCanvas" ng-show="canvasShow">
+                
+        </div>  -->

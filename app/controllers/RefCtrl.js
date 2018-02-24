@@ -155,7 +155,9 @@ angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $
           };
 
 
-
+         
+          // console.log("$scope.canvasShow", $scope.canvasShow);
+          
 
         } else {
             $scope.save  = function(){

@@ -180,6 +180,7 @@ ul.canvas-list {
     top: 35px;
     left: 250px;
     z-index: 1;
+   
 }
 
 .madeCanvas{
@@ -187,4 +188,11 @@ ul.canvas-list {
     top: 25px;
     left: 25px;
     z-index: 2;
+   
 }
+
+.list-of-made-canvases{
+    position:absolute;
+    z-index:12;
+}
+
