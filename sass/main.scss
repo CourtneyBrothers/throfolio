@@ -198,6 +198,23 @@ ul.canvas-list {
     z-index:12;
 }
 
-.madeCanvasGrid{
-    background: rgb(179, 174, 174);
+.madeSketch{
+    background: rgb(240, 235, 235);
+    
 }
+
+.sketch{
+    border: 1rem solid white;
+}
+
+// .sketchContainer {
+//    display: grid;
+//    grid-template-rows: 1fr 1fr;
+//    grid-template-columns: 1fr 1fr;
+// }
+
+// .sketch {
+//     max-height: .33vh;
+//     max-width: .33vw;
+
+// }

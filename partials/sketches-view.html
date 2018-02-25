@@ -1,11 +1,11 @@
-<div class="madeCanvasGrid">
-        <div class = "pinContainer" >
+<div class="madeSketch">
+        <div class = "sketchContainer" >
     
-                <div class="list-of-made-sketches">
+                <div class="list-of-made-sketches" class="sketchGrid">
                     <h1>canvases</h1>
-                        <div ng-repeat="canvas in canvases">
+                        <div ng-repeat="canvas in canvases" class="sketch">
                             <h1>{{canvas.name}}</h1>
-                            <img ng-src="{{canvas.url}}" alt="?">
+                            <img ng-src="{{canvas.url}}" alt="?" class="sketchImg">
                         </div>   
                 </div>
         </div>
