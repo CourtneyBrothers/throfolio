@@ -7,8 +7,8 @@
             <div id="canvasList" class="list-of-made-canvases">
                 <h1>canvases</h1>
                     <div ng-repeat="canvas in canvases">
-                        <!-- <h1>{{canvas.name}}</h1> -->
-                        <img ng-src="{{canvas.url}}" alt="?" class="madeCanvas">
+                        <h1 ng-click="toggleFilter()">{{canvas.name}}</h1>
+                        <img ng-src="{{canvas.url}}" alt="?" class="madeCanvas" ng-show="toggle">
                     </div>   
             </div>
         </div>
@@ -16,7 +16,7 @@
             <div class="madeCanvasBackground"> <!-- cb add board image into ref view for comp --> 
                 <img src="{{boardCover}}" alt="?" ng-hide="showme">
             </div>
-        </div>
+</div>
 
   
 

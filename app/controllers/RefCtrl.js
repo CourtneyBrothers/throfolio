@@ -155,6 +155,9 @@ angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $
           };
 
 
+          $scope.toggleFilter = function() {
+            this.toggle = !this.toggle;
+          };
          
           // console.log("$scope.canvasShow", $scope.canvasShow);
           
