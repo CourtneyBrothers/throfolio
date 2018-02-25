@@ -18,9 +18,16 @@
                 <!-- change to board.username -->
                 <h1><a ng-href="#!/portfolios/{{board.username}}/{{board.boardId}}">{{board.name}}</a></h1>
                     <img src={{board.url}} alt="?">
-                </div>
             </div>
         </div>
-
+        <div ng-repeat="sketch in sketches">
+                <div class = "pinBoard">
+                        <h1><a ng-href="#!/portfolios/{{board.username}}">{{board.username}}</a></h1>
+                        <!-- change to board.username -->
+                        <h1><a ng-href="#!/portfolios/{{board.username}}/{{board.boardId}}">{{board.name}}</a></h1>
+                            <img src={{sketch.url}} alt="?" class="sketchForMain">
+                </div>
     </div>
 </div>
+
+

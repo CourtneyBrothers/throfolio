@@ -15,4 +15,13 @@ angular.module("Throfolio").controller("PortMainCtrl", function ($scope, FbFacto
                 console.log("getBoards didn't work", error);
             });
 
+            FbFactory.getAllSketches()
+            .then((sketches)=>{
+                $scope.sketches = sketches;
+
+            })
+            .catch((error) => {
+                console.log("get sketches didnt work", error);
+            });
+
 });

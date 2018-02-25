@@ -155,6 +155,24 @@ angular.module("Throfolio").factory("FbFactory", ($http, $q) => {
         });
     }
 
+    function getAllSketches() {
+        return $q((resolve, reject) => {
+            $http
+                .get(`https://throfolio.firebaseio.com/canvas.json`)
+                .then((sketches) => {
+                    let keys = Object.keys(sketches.data);
+                    keys.forEach(key => {
+                        sketches.data[key].boardId = key;
+                    });
+                    let sketchesDataArr = Object.values(sketches.data);
+                    resolve(sketchesDataArr);
+                })
+                .catch((error) => {
+                    reject(error);
+                });
+        });
+    }
+
     function removeBoards(FbId){
         return $q((resolve, reject) => {
             $http
@@ -202,6 +220,6 @@ angular.module("Throfolio").factory("FbFactory", ($http, $q) => {
 
    
 
-    return {addBoard, getBoards, getPins, addPin, getBoard, getAllBoards,getBoardsPublic, addCanvas, getCanvas, removeBoards, deletePins, getCoverCanvas};
+    return {addBoard, getBoards, getPins, addPin, getBoard, getAllBoards,getBoardsPublic, addCanvas, getCanvas, removeBoards, deletePins, getCoverCanvas, getAllSketches};
 
 });
