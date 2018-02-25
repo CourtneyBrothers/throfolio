@@ -220,10 +220,14 @@ ul.canvas-list {
 // }
 
 .band{
-    background: teal;
+    background: rgba(60, 129, 129, 0.541);
 }
 
 .sketchForMain{
     max-width: 100%;
     max-height: auto;
+}
+
+.pinBoard:hover{
+    box-shadow: 0 4px 5px rgba(233, 228, 228, 0.925);
 }
