@@ -170,6 +170,7 @@ ul.canvas-list {
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
+    margin-right: 100px;
    
 }
 
@@ -177,7 +178,7 @@ ul.canvas-list {
 
 .madeCanvasBackground{
     position:absolute;
-    top: 35px;
+    top: 120px;
     left: 250px;
     z-index: 1;
     border: 2px solid red;
@@ -186,8 +187,8 @@ ul.canvas-list {
 
 .madeCanvas{
     position:absolute;
-    top: 25px;
-    left: 150px;
+    top: 100px;
+    left: 20px;
     z-index: 2;
     border: 2px solid black;
    
@@ -229,5 +230,6 @@ ul.canvas-list {
 }
 
 .pinBoard:hover{
-    box-shadow: 0 4px 5px rgba(233, 228, 228, 0.925);
+    box-shadow: 0 4px 5px rgba(0,0,0,0.2);
+
 }
