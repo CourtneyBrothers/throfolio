@@ -14,15 +14,20 @@ h1{
 
 a {
     text-decoration: none;
-    color: black;
+    color:rgba(30, 77, 57, 0.418);
+
 }
 
 h3 {
     color: rgba(30, 77, 57, 0.418);
-    font-size: 2rem;
-    letter-spacing: 5px;
+    font-size: 2.3rem;
+    letter-spacing: 10px;
 
 
+}
+
+h2 {
+    color: white;
 }
 //canvas list styling 
 
@@ -229,10 +234,13 @@ ul.canvas-list {
 // }
 
 .band{
-    margin: 50px 50px 50px 50px;
+    margin: 100px 50px 50px 50px;
     // background: rgb(156, 129, 129);
      background:  rgba(42, 73, 60, 0.582);
+    //  object-fit: contain;
 }
+
+
 
 .sketchForMain{
     max-width: 100%;
@@ -241,36 +249,50 @@ ul.canvas-list {
 
 .pinBoard{
     box-shadow: inset 0 0 10px rgba(230, 233, 232, 0.938);
+    margin: 10px;
+    padding: 10px;
+    object-fit: contain;
 }
+
+
 .pinBoard:hover{
     box-shadow: 0 4px 5px rgba(0,0,0,0.2);
 
 }
 
+
+img {
+    width: 100%;
+}
+
 .loginPage {
     position: absolute;
     z-index: 20;
-    margin-left: -50px;
-    margin-top: -50px;
+    margin-left: 378px;
+    margin-top: -150px;
+  
 }
 .loginPage2 {
     position: absolute;
     z-index: 20;
-    margin-left: -50px;
-    margin-top: 100px;
+    margin-left: -200px;
+    margin-top: -50px;
+    
+    
 }
 .name{
     position: absolute;
     z-index: 21;
-    margin-left: 90px;
-    margin-top: 30px;  
+    margin-left: 470px;
+        margin-top: -77px;
 }
 
 .myBoards{
     position: absolute;
     z-index: 21;
-    margin-left: 90px;
-    margin-top: 200px;    
+    margin-left: 10px;
+    margin-top: 50px;
+  
 }
 .navContainer{
     background-image: url(app/thickwhitepaintstroke.png);
@@ -278,4 +300,8 @@ ul.canvas-list {
 
 body{
     background:  rgba(42, 73, 60, 0.582);  
+}
+
+.portforlioContainer{
+    margin: 50px 50px 50px 50px;
 }

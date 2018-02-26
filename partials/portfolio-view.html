@@ -15,7 +15,7 @@
             <div ng-repeat="board in boards">  
                 <div class = "pinBoard">
                     <h1><a ng-href="#!/portfolio/{{board.boardId}}">{{board.name}}</a></h1>
-                        <img src={{board.url}} alt="?" draggable="true">
+                        <img src={{board.url}} alt="?" draggable="true" class="port">
                         <button ng-click="deleteBoard(board.boardId)">Delete Canvas</button>
                         <a href="#!/canvas/{{board.boardId}}">Mark up!</a>
                     </div>
