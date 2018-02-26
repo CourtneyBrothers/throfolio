@@ -13,8 +13,16 @@
     <img src="app/thickwhitepaintstroke.png">
 </div>
 
+<div class="loginPage2">
+        <img src="app/thickwhitepaintstroke.png">
+</div>
+
 <div class="name">
     <h3>Sketchbook</h3>
+</div>
+
+<div class="myBoards">
+        <h2><a ng-href="#!/portfolio" >my sketch boards<h2>
 </div>
 
 <div class ="portfolioContainer">
@@ -30,9 +38,9 @@
         <!-- </div> -->
         <div ng-repeat="sketch in sketches">
                 <div class = "pinBoard">
-                        <h1><a ng-href="#!/portfolios/{{sketch.username}}">{{sketch.username}}</a></h1>
+                        <!-- <h1><a ng-href="#!/portfolio">{{sketch.username}}</a></h1>
                        
-                        <h1><a ng-href="#!/portfolios/{{sketch.username}}/{{sketch.boardId}}">{{sketch.name}}</a></h1>
+                        <h1><a ng-href="#!/portfolios/{{sketch.username}}/{{sketch.boardId}}">{{sketch.name}}</a></h1> -->
                             <img src={{sketch.url}} alt="?" class="sketchForMain" class="boardThumb">
                 </div>
     </div>

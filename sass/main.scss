@@ -229,6 +229,7 @@ ul.canvas-list {
 // }
 
 .band{
+    margin: 50px 50px 50px 50px;
     // background: rgb(156, 129, 129);
      background:  rgba(42, 73, 60, 0.582);
 }
@@ -252,7 +253,12 @@ ul.canvas-list {
     margin-left: -50px;
     margin-top: -50px;
 }
-
+.loginPage2 {
+    position: absolute;
+    z-index: 20;
+    margin-left: -50px;
+    margin-top: 100px;
+}
 .name{
     position: absolute;
     z-index: 21;
@@ -260,6 +266,12 @@ ul.canvas-list {
     margin-top: 30px;  
 }
 
+.myBoards{
+    position: absolute;
+    z-index: 21;
+    margin-left: 90px;
+    margin-top: 200px;    
+}
 .navContainer{
     background-image: url(app/thickwhitepaintstroke.png);
 }
