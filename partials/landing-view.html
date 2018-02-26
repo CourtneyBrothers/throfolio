@@ -30,9 +30,9 @@
         <!-- </div> -->
         <div ng-repeat="sketch in sketches">
                 <div class = "pinBoard">
-                        <h1><a ng-href="#!/portfolios/{{board.username}}">{{sketch.username}}</a></h1>
+                        <h1><a ng-href="#!/portfolios/{{sketch.username}}">{{sketch.username}}</a></h1>
                        
-                        <h1><a ng-href="#!/portfolios/{{board.username}}/{{board.boardId}}">{{sketch.name}}</a></h1>
+                        <h1><a ng-href="#!/portfolios/{{sketch.username}}/{{sketch.boardId}}">{{sketch.name}}</a></h1>
                             <img src={{sketch.url}} alt="?" class="sketchForMain" class="boardThumb">
                 </div>
     </div>
