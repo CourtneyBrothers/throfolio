@@ -5,7 +5,7 @@
     <div class = "pinContainer" >
 
             <div id="canvasList" class="list-of-made-canvases">
-                <h1>click to view sketches</h1>
+                <h1>view sketch</h1>
                     <div ng-repeat="canvas in canvases">
                         <h2 ng-click="toggleFilter()">{{canvas.name}}</h2>
                         <img ng-src="{{canvas.url}}" alt="?" class="madeCanvas" ng-show="toggle">

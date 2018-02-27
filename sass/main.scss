@@ -19,10 +19,9 @@ a {
 }
 
 h3 {
-    color: white;
+    color :rgba(30, 77, 57, 0.418);;
     font-size: 2.3rem;
     letter-spacing: 10px;
-
 
 }
 
@@ -50,7 +49,9 @@ ul.canvas-list {
   
 }
 
-
+.refBand {
+    column-count: 2;
+}
 // canvas
 
 // body {
@@ -272,6 +273,11 @@ ul.canvas-list {
     object-fit: contain;
     padding: 10px;
   
+}
+
+img.pinThumb {
+    width: 100%;
+   
 }
 
 // .button {
