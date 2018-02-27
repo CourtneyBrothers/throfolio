@@ -6,6 +6,7 @@
             <div class="pinBoard">
                    
                     <input type="file" id="fileButton" onchange="angular.element(this).scope().addImageToCloud(event.currentTarget.files[0])" ng-model="file" /> <!-- for cloud upload  function--> 
+                    <br>
                     <input type="text" placeholder="Picture Name" ng-model="newBoard.name">
                     <input type="text" placeholder="Image URL" ng-model="newBoard.url">
                     <br>
@@ -18,7 +19,7 @@
                 <div class = "pinBoard">
                     <h1><a ng-href="#!/portfolio/{{board.boardId}}">{{board.name}}</a></h1>
                         <img src={{board.url}} alt="?" draggable="true" class="port">
-                        <button ng-click="deleteBoard(board.boardId)">Delete Canvas</button>
+                        <h2 ng-click="deleteBoard(board.boardId)">Delete Canvas</h2>
                         <a href="#!/canvas/{{board.boardId}}">Mark up!</a>
                     </div>
                 </div>

@@ -14,12 +14,12 @@ h1{
 
 a {
     text-decoration: none;
-    color:rgba(30, 77, 57, 0.418);
+    color:white;
 
 }
 
 h3 {
-    color: rgba(30, 77, 57, 0.418);
+    color: white;
     font-size: 2.3rem;
     letter-spacing: 10px;
 
@@ -27,7 +27,8 @@ h3 {
 }
 
 h2 {
-    color: white;
+    color: rgba(30, 77, 57, 0.418);
+    font-size: 1rem;
 }
 //canvas list styling 
 
@@ -242,7 +243,7 @@ ul.canvas-list {
     padding: 10px 10px 10px 10px;
     -moz-background-clip: border;     /* Firefox 3.6 */
     -webkit-background-clip: border;  /* Safari 4? Chrome 6? */
-    background-clip: border-box;  
+    background-clip: border-box;
 }
 
 //this makes a scrolling horizontal window of tiny thumbnails
