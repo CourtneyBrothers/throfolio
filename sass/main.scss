@@ -45,7 +45,7 @@ ul.canvas-list {
 
 
 .band {
-    column-count: 4;
+    column-count: 3;
   
 }
 
@@ -234,14 +234,30 @@ ul.canvas-list {
 // }
 
 .band{
-    margin: 100px 50px 50px 50px;
+    margin: 50px 50px 50px 50px;
     // background: rgb(156, 129, 129);
-     background:  rgba(42, 73, 60, 0.582);
+    //  background:   rgba(42, 73, 60, 0.582); 
+    //  background:  rgba(42, 73, 60, 0.582); //green from yesterday
     //  object-fit: contain;
     padding: 10px 10px 10px 10px;
-
+    -moz-background-clip: border;     /* Firefox 3.6 */
+    -webkit-background-clip: border;  /* Safari 4? Chrome 6? */
+    background-clip: border-box;  
 }
 
+//this makes a scrolling horizontal window of tiny thumbnails
+// .canvasBand {
+//     margin: 50px 50px 50px 50px;
+//     // background: rgb(156, 129, 129);
+//     //  background:   rgba(42, 73, 60, 0.582); 
+//     //  background:  rgba(42, 73, 60, 0.582); //green from yesterday
+//     //  object-fit: contain;
+//     padding: 10px 10px 10px 10px;
+//     -moz-background-clip: border;     /* Firefox 3.6 */
+//     -webkit-background-clip: border;  /* Safari 4? Chrome 6? */
+//     background-clip: border-box;
+//     column-count: 4;   
+// }
 
 
 .sketchForMain{
@@ -253,6 +269,7 @@ ul.canvas-list {
     box-shadow: inset 0 0 10px rgba(230, 233, 232, 0.938);
     margin: 20px;
     object-fit: contain;
+    padding: 10px;
   
 }
 
@@ -281,7 +298,7 @@ img.port {
     position: absolute;
     z-index: 20;
     margin-left: 378px;
-    margin-top: -150px;
+    margin-top: -100px;
   
 }
 .loginPage2 {
@@ -296,7 +313,7 @@ img.port {
     position: absolute;
     z-index: 21;
     margin-left: 470px;
-        margin-top: -77px;
+        margin-top: -30px;
 }
 
 .myBoards{
@@ -311,7 +328,8 @@ img.port {
 }
 
 body{
-    background:  rgba(42, 73, 60, 0.582);  
+    // background:  rgba(194, 200, 233, 0.185);  
+    background:  rgba(42, 73, 60, 0.582); 
 }
 
 .portforlioContainer{
