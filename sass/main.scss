@@ -321,6 +321,9 @@ body{
 //rang
 .lineWidthSelector{
     background: rgba(0,0,0,0);
+    position: absolute;
+    z-index: 25;
+    top: 80px;
 }
 input[type=range] {
     -webkit-appearance: none;
@@ -335,14 +338,14 @@ input[type=range] {
     height: 8.4px;
     cursor: pointer;
     animate: 0.2s;
-    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    box-shadow: 1px 1px 1px #f3f1f1, 0px 0px 1px #f5eeee;
     background: rgba(42, 73, 60, 0.582);
     border-radius: 1.3px;
-    border: 0.2px solid #010101;
+    border: 0.2px solid #f3efef;
   }
   input[type=range]::-webkit-slider-thumb {
-    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-    border: 1px solid #000000;
+    box-shadow: 1px 1px 1px #f0eded, 0px 0px 1px #0d0d0d;
+    border: 1px solid #eeeaea;
     height: 36px;
     width: 16px;
     border-radius: 3px;
@@ -359,14 +362,14 @@ input[type=range] {
     height: 8.4px;
     cursor: pointer;
     animate: 0.2s;
-    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    box-shadow: 1px 1px 1px #f7f4f4, 0px 0px 1px #e6e4e4;
     background: rgba(42, 73, 60, 0.582);
     border-radius: 1.3px;
-    border: 0.2px solid #010101;
+    border: 0.2px solid #f7f1f1;
   }
   input[type=range]::-moz-range-thumb {
-    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-    border: 1px solid #000000;
+    box-shadow: 1px 1px 1px #f0eded, 0px 0px 1px #0d0d0d;
+    border: 1px solid #f3efef;
     height: 36px;
     width: 16px;
     border-radius: 3px;
@@ -385,19 +388,19 @@ input[type=range] {
   }
   input[type=range]::-ms-fill-lower {
     background: rgba(42, 73, 60, 0.582);
-    border: 0.2px solid #010101;
+    border: 0.2px solid #f3efef;
     border-radius: 2.6px;
-    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    box-shadow: 1px 1px 1px #faf8f8, 0px 0px 1px #0d0d0d;
   }
   input[type=range]::-ms-fill-upper {
     background: rgba(42, 73, 60, 0.582);
-    border: 0.2px solid #010101;
+    border: 0.2px solid #f0eeee;
     border-radius: 2.6px;
-    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    box-shadow: 1px 1px 1px #ece8e8, 0px 0px 1px #0d0d0d;
   }
   input[type=range]::-ms-thumb {
-    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-    border: 1px solid #000000;
+    box-shadow: 1px 1px 1px #eeeaea, 0px 0px 1px #0d0d0d;
+    border: 1px solid #fdfdfd;
     height: 36px;
     width: 16px;
     border-radius: 3px;
