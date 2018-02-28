@@ -134,14 +134,16 @@ angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $
           
           $scope.getCanvasNames(); //call names
           
+//took out getting single canvas 
+          // $scope.getCanvasTheOne = (canvasName) => {
+          //   console.log(canvasName, "canvas name");
+          //   FbFactory.getCoverCanvas(canvasName).then(data => {
+          //     console.log(" conver canvas data", data.data);
+          //     $scope.savedCanvas = data.data;
+          //     console.log($scope.savedCanvas, "savedCanvas");
+          //   });
+          // };
 
-          // $scope.getCanvasTheOne = () =>{
-          //   FbFactory.getCoverCanvas($routeParams.boardId).then(data => {
-          //     console.log(" conver canvas data", data);
-          //   })
-          // }
-
-          // $scope.getCanvasTheOne();
 
           $scope.deletePin = (pinId) => {
             console.log("delete", pinId);
@@ -152,8 +154,32 @@ angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $
              });
           };
 
-        } else {
 
+          $scope.toggleFilter = function() {
+            this.toggle = !this.toggle;
+          };
+         
+          // console.log("$scope.canvasShow", $scope.canvasShow);
+          
+
+        } else {
+            $scope.save  = function(){
+            // html2CanvasAngular.renderBody().then(function(canvas){
+              let canvas = document.getElementById("pwCanvasMain");
+              // document.body.appendChild(canvas); stop appenings
+              let canvasURL = canvas.toDataURL();
+              console.log("made url", canvas.toDataURL());
+//CB add this
+              $scope.newCanvas.uid = firebase.auth().currentUser.uid;
+              $scope.newCanvas.username = firebase.auth().currentUser.displayName;
+              $scope.newCanvas.url = canvasURL;
+              $scope.newCanvas.boardId = $routeParams.boardId;
+
+              FbFactory.addCanvas($scope.newCanvas).then(data =>{
+                console.log("new canvas", data);
+                $route.reload(`canvas/${$scope.newCanvas.boardId}`);
+              });
+          };
 
 
           // $scope.save  = function(){

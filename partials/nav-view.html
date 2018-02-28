@@ -3,7 +3,7 @@
         <div class="navbar flex-wrap">
             <a href="#!/boards" class="logo">
             </a>
-            <ul>
+            <ul class="nav">
                 <li ng-repeat="item in navBar">
                     <a ng-show="{{item.bang}}loggedIn" href="#" ng-click="navAuth(item.name)">{{item.name}}</a>
                 </li>
