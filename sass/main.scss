@@ -76,6 +76,7 @@ button.saveBtn:hover{
   
 }
 
+
 .refBand {
     column-count: 2;
 }
@@ -275,18 +276,18 @@ button.saveBtn:hover{
 }
 
 //this makes a scrolling horizontal window of tiny thumbnails
-// .canvasBand {
-//     margin: 50px 50px 50px 50px;
-//     // background: rgb(156, 129, 129);
-//     //  background:   rgba(42, 73, 60, 0.582); 
-//     //  background:  rgba(42, 73, 60, 0.582); //green from yesterday
-//     //  object-fit: contain;
-//     padding: 10px 10px 10px 10px;
-//     -moz-background-clip: border;     /* Firefox 3.6 */
-//     -webkit-background-clip: border;  /* Safari 4? Chrome 6? */
-//     background-clip: border-box;
-//     column-count: 4;   
-// }
+.sketchBand {
+    margin: 50px 50px 50px 50px;
+    // background: rgb(156, 129, 129);
+    //  background:   rgba(42, 73, 60, 0.582); 
+    //  background:  rgba(42, 73, 60, 0.582); //green from yesterday
+    //  object-fit: contain;
+    padding: 10px 10px 10px 10px;
+    -moz-background-clip: border;     /* Firefox 3.6 */
+    -webkit-background-clip: border;  /* Safari 4? Chrome 6? */
+    background-clip: border-box;
+    column-count: 4;   
+}
 
 
 .sketchForMain{
@@ -466,4 +467,22 @@ input[type=range] {
   }
   input[type=range]:focus::-ms-fill-upper {
     background: rgba(42, 73, 60, 0.582);
+  }
+
+  img.pinCover {
+      max-height:auto;
+      max-width:500px;
+      margin-left: 700px;
+      margin-top: -500px;
+      position: absolute;
+      z-index: -10;
+  }
+
+  h1.sketchBoardCover {
+      color: rgba(26, 24, 24, 0.123);
+      font-size: 10rem;
+  }
+
+  h1.mark{
+    margin-left: 1100px;
   }
