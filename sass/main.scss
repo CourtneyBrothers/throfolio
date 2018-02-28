@@ -1,4 +1,6 @@
-
+html{
+   height:  100%;
+}
 
 ///TYPOGRAPHY
 p, a, h1, h2, h3 {
@@ -198,7 +200,9 @@ button.saveBtn:hover{
     margin-top: 30px;
     margin-right: 15px;
     box-shadow: inset 0 0 40px rgba(243, 247, 246, 0.452);
-   
+    // background: radial-gradient( rgba(42, 73, 60, 0.582) 50%, rgba(120, 133, 127, 0.253) ); 
+    
+    
 }
 
 .canvasBand {
@@ -207,6 +211,7 @@ button.saveBtn:hover{
     margin-left: 20rem;
     position: absolute;
     z-index: -20;
+   
 }
 
 
@@ -368,8 +373,10 @@ img.port {
 body{
     // background:  rgba(194, 200, 233, 0.185);  
     background: radial-gradient( rgba(42, 73, 60, 0.582) 50%, rgba(120, 133, 127, 0.253) ); 
+    height: 100%;
+    margin: 0;
     background-repeat: no-repeat;
-    background-size:cover;
+    background-attachment: fixed;
 }
 
 .portforlioContainer{
