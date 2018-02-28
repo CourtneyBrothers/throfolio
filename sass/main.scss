@@ -50,6 +50,26 @@ ul.canvas-list {
 
 ///
 
+button.saveBtn {
+    border-color: rgba(255, 255, 255, 0.151);
+    background: #f0eded1f;
+    padding: 20px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 50%;
+    -webkit-box-shadow: inset 0 0 9px rgb(241, 236, 236);
+    -moz-box-shadow: inset 0 0 9px rgb(241, 236, 236);
+    box-shadow: inset 0 0 9px rgb(241, 236, 236);
+    text-shadow: rgba(0,0,0,.4) 0 1px 0;
+    color: white;
+    font-size: 12px;
+    font-family: 'Fauna One', serif;
+    text-decoration: none;
+    vertical-align: middle;
+}
+button.saveBtn:hover{
+    box-shadow: inset 0 0 30px rgb(241, 236, 236);
+}
 
 .band {
     column-count: 3;
@@ -105,13 +125,13 @@ ul.canvas-list {
     width: 4rem;
     height: 4rem;
     margin-right: 20px;
-    box-shadow: inset 0 0 9px rgb(241, 236, 236);
+    box-shadow: inset 0 0 30px rgb(241, 236, 236);
     display: inline-block;
 
   }
 
   .pwColor.active {
-    box-shadow: 2px 3px 2px rgb(255, 255, 255);
+    box-shadow: inset 0 0 5px rgb(241, 236, 236);
   }
 
 
