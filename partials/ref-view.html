@@ -44,10 +44,21 @@
 
                    
             </div>
+        -->
 
-       
+             <div ng-repeat="boardSketch in boardSketches">
+                 <div class="pinBoard" id="pin"> 
+                <img src="{{boardSketch.url}}" alt="?" class="boardSketchThumb">
+                    <div class="boardSketchHeader">
+                        <h2>{{boardSketch.name}}</h2>
+                        <button ng-click="deleteboardSketch(boardSketch.boardSketchId)">Delete Pin</button>
+                        
+                    </div>
+
+                   
+            </div>
         </div>
-        </div> -->
+
 
         <div class="pinBoard" id="mainImage"> <!-- cb add board image into ref view for comp -->
                        

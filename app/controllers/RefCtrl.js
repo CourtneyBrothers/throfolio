@@ -122,6 +122,16 @@ angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $
                 
           };
 
+          $scope.getBoardSketches = () => {
+            FbFactory.getCanvas($routeParams.boardId).then(data => {
+                $scope.boardSketches = data.data;
+                console.log("success");
+              }
+            );
+          };
+
+          $scope.getBoardSketches();
+
           $scope.getCanvasNames = () =>{
             console.log("get canvas name");
             FbFactory.getCanvas($routeParams.boardId).then(data => {

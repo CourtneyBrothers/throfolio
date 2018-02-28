@@ -104,6 +104,9 @@ angular.module("Throfolio").factory("FbFactory", ($http, $q) => {
         });
     }
 
+
+    //returns all sketches made for each sketchboard
+
     function getCanvas(boardId){
         return $q((resolve, reject) => {
             $http
