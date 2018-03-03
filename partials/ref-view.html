@@ -1,13 +1,14 @@
 <div class = "pinContainer" >
 
 
-
-    <h1 class="sketchBoardCover">Board: {{boardName}}</h1>
+    <div class="sketchBoardHeader">
+        <h1 class="sketchBoardCover">Board: {{boardName}}</h1>
+    </div>
     <!-- <button ng-click="">Mark up!</button> -->
     <div class="coverBoard" id="mainImage"> <!-- used to be class pinboard -->
                        
         <img src="{{boardCover}}" alt="?" class="pinCover">
-            <!-- <h2>{{pin.name}}</h2> -->
+            <h2>{{pin.name}}</h2>
            
             <a href="#!/canvas/{{boardId}}" class="mark">Mark up!</a>
     
