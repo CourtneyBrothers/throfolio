@@ -12,6 +12,7 @@ p, a, h1, h2, h3 {
 h1{
     font-size: 1rem;
     color: rgb(14, 13, 13);
+    
 }
 
 h2.delete:hover{
@@ -28,7 +29,7 @@ a.link{
 }
 
 h3 {
-    color :rgba(30, 77, 57, 0.418);;
+    color :rgba(243, 245, 244, 0.418);;
     font-size: 1.5rem;
     letter-spacing: 1.3rem;
 
@@ -40,10 +41,15 @@ h3.sketchHeader {
 }
 h2.sketchboardHeader{
     color: rgba(26, 24, 24, 0.404);
-    font-size: 5rem;
+    font-size: 3rem;
     letter-spacing: 3.4rem;
     margin: auto;
-    padding: 0;
+    margin-top: 40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    box-shadow: inset 0 0 10px rgba(230, 233, 232, 0.938);
+    padding-left: 151px;
 }   
 
 h2 {
@@ -89,7 +95,7 @@ img{
     border-radius: 2%;
 }
 .band {
-    column-count: 3;
+    column-count: 4;
   
 }
 
@@ -249,10 +255,14 @@ img{
    
 }
 
+img.madeBckground{
+    max-width:960px;
+    max-height:auto;
+}
 .madeCanvas{
     position:absolute;
-    top: 46px;
-    left: 20px;
+    top: 15px;
+    left: 17px;
     z-index: 2;
     // border: 2px solid black;
    
@@ -320,7 +330,9 @@ img{
 
 .pinBoard{
     box-shadow: inset 0 0 10px rgba(230, 233, 232, 0.938);
-    margin: 20px;
+  
+    margin-bottom: 20px;
+    
     object-fit: contain;
     padding: 10px;
     -webkit-column-break-inside: avoid;
@@ -345,8 +357,8 @@ img.pinThumb {
 // }
 
 .pinBoard:hover{
-    box-shadow: 0 4px 5px rgba(0,0,0,0.2);
-
+   
+    box-shadow: inset 0 0 20px rgba(230, 233, 232, 0.938);
 }
 
 
@@ -372,8 +384,8 @@ img.port {
 .name{
     position: absolute;
     z-index: 21;
-    margin-left: 470px;
-        margin-top: -30px;
+    margin-left: 343px;
+    margin-top: -140px;
 }
 
 .myBoards{
@@ -398,8 +410,8 @@ body{
     background-attachment: fixed;
 }
 
-.portforlioContainer{
-    margin: 50px 0px 50px 50px;
+.portfolioContainer{
+    margin-top: 0px;
 }
 
 //rang
@@ -516,6 +528,10 @@ input[type=range] {
     margin-left: 1100px;
     margin-top: 100px;
   }
+  img.bckimg{
+    max-width: 960px;
+    max-height: auto;
+}
 
   //media queries
   @media only screen 
@@ -525,6 +541,19 @@ input[type=range] {
   and (-webkit-min-device-pixel-ratio: 2) {
     .band {
         column-count: 4;
+        width: 100%;
+        margin: 0px;
+    }
+
+    h2.sketchboardHeader{
+        color: rgba(26, 24, 24, 0.404);
+        font-size: 3.8rem;
+        letter-spacing: 2rem;
+    
+        padding-left: 10px;
+        margin-top: 40px;
+        margin-left: 100px;
+        box-shadow: inset 0 0 10px rgba(230, 233, 232, 0.938);
     }
     a.list{
         font-size: .5rem;
@@ -547,8 +576,10 @@ input[type=range] {
         display: flex;
         flex-flow: row nowrap;
         align-items: center;
+      
        
     }
+ 
 
     .canvasBand {
         display: flex;

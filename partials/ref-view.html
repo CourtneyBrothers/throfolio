@@ -7,14 +7,23 @@
     <!-- <button ng-click="">Mark up!</button> -->
     <div class="coverBoard" id="mainImage"> <!-- used to be class pinboard -->
                        
-        <img src="{{boardCover}}" alt="?" class="pinCover">
-            <h2>{{pin.name}}</h2>
+        <!-- <img src="{{boardCover}}" alt="?" class="pinCover">
+            <h2>{{pin.name}}</h2> -->
            
-            <a href="#!/canvas/{{boardId}}" class="mark">Mark up!</a>
+            <!-- <a href="#!/canvas/{{boardId}}" class="mark">Mark up!</a> -->
     
             
         </div>
+
+        <div class="gridBand">
    
+
+        <img src="{{boardCover}}" alt="?" class="pinBoard">
+        <h2>{{pin.name}}</h2>
+       
+        <a href="#!/canvas/{{boardId}}" class="mark">Mark up!</a>
+            
+      
 
              <div ng-repeat="boardSketch in boardSketches">
                  <div class="pinBoard" id="pin"> 
@@ -28,5 +37,7 @@
                    
             </div>
         </div>
+
+    </div>
 
  </div>
