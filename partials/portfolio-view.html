@@ -1,5 +1,5 @@
 <div class ="portfolioContainer">
-
+<h2 class="sketchboardHeader" class="pinBoard">SKETCHBOARDS</h2>
        
 
         <div class="band">  <!-- cb add class for grid styling -->
@@ -19,7 +19,7 @@
                 <div class = "pinBoard">
                     <h1><a ng-href="#!/portfolio/{{board.boardId}}">{{board.name}}</a></h1>
                         <img src={{board.url}} alt="?" draggable="true" class="port">
-                        <h2 ng-click="deleteBoard(board.boardId)">Delete Canvas</h2>
+                        <h2 ng-click="deleteBoard(board.boardId)" class="delete">X</h2>
                         <a href="#!/canvas/{{board.boardId}}">Mark up!</a>
                     </div>
                 </div>

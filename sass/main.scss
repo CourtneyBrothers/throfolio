@@ -1,4 +1,6 @@
-
+html{
+   height:  100%;
+}
 
 ///TYPOGRAPHY
 p, a, h1, h2, h3 {
@@ -10,8 +12,12 @@ p, a, h1, h2, h3 {
 h1{
     font-size: 1rem;
     color: rgb(14, 13, 13);
+    
 }
 
+h2.delete:hover{
+    color: rgb(112, 41, 41)
+}
 a {
     text-decoration: none;
     color:white;
@@ -23,11 +29,30 @@ a.link{
 }
 
 h3 {
-    color :rgba(30, 77, 57, 0.418);;
-    font-size: 2.3rem;
-    letter-spacing: 10px;
+    color :rgba(243, 245, 244, 0.418);;
+    font-size: 1.5rem;
+    letter-spacing: 1.3rem;
 
 }
+h3.sketchHeader {
+    color: rgba(26, 24, 24, 0.404);
+    font-size: 5rem;
+
+}
+h2.sketchboardHeader{
+    color: rgba(26, 24, 24, 0.116);
+    font-size: 3rem;
+    letter-spacing: 3.4rem;
+    margin: auto;
+    margin-top: -85px;
+    width: 100%;
+
+    box-shadow: inset 0 0 50px rgba(230, 233, 232, 0.938);
+    padding-left: 151px;
+    position: fixed;
+
+    
+}   
 
 h2 {
     color: rgba(30, 77, 57, 0.418);
@@ -47,11 +72,35 @@ ul.canvas-list {
 
 ///
 
+button.saveBtn {
+    border-color: rgba(255, 255, 255, 0.151);
+    background: #f0eded1f;
+    padding: 20px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 50%;
+    -webkit-box-shadow: inset 0 0 9px rgb(241, 236, 236);
+    -moz-box-shadow: inset 0 0 9px rgb(241, 236, 236);
+    box-shadow: inset 0 0 9px rgb(241, 236, 236);
+    text-shadow: rgba(0,0,0,.4) 0 1px 0;
+    color: white;
+    font-size: 12px;
+    font-family: 'Fauna One', serif;
+    text-decoration: none;
+    vertical-align: middle;
+}
+button.saveBtn:hover{
+    box-shadow: inset 0 0 30px rgb(241, 236, 236);
+}
 
+img{
+    border-radius: 2%;
+}
 .band {
-    column-count: 3;
+    column-count: 4;
   
 }
+
 
 .refBand {
     column-count: 2;
@@ -102,13 +151,13 @@ ul.canvas-list {
     width: 4rem;
     height: 4rem;
     margin-right: 20px;
-    box-shadow: inset 0 0 9px rgb(241, 236, 236);
+    box-shadow: inset 0 0 30px rgb(241, 236, 236);
     display: inline-block;
 
   }
 
   .pwColor.active {
-    box-shadow: 2px 3px 2px rgb(255, 255, 255);
+    box-shadow: inset 0 0 5px rgb(241, 236, 236);
   }
 
 
@@ -174,6 +223,9 @@ ul.canvas-list {
     margin-top: 30px;
     margin-right: 15px;
     box-shadow: inset 0 0 40px rgba(243, 247, 246, 0.452);
+    // background: radial-gradient( rgba(42, 73, 60, 0.582) 50%, rgba(120, 133, 127, 0.253) ); 
+    
+    
 }
 
 .canvasBand {
@@ -182,6 +234,7 @@ ul.canvas-list {
     margin-left: 20rem;
     position: absolute;
     z-index: -20;
+   
 }
 
 
@@ -198,16 +251,20 @@ ul.canvas-list {
 .madeCanvasBackground{
     position:absolute;
     top: 120px;
-    left: 250px;
+    left: 263px;
     z-index: 1;
     // border: 2px solid red;
    
 }
 
+img.madeBckground{
+    max-width:960px;
+    max-height:auto;
+}
 .madeCanvas{
     position:absolute;
-    top: 100px;
-    left: 20px;
+    top: 15px;
+    left: 17px;
     z-index: 2;
     // border: 2px solid black;
    
@@ -215,11 +272,13 @@ ul.canvas-list {
 
 .list-of-made-canvases{
     position:absolute;
-    z-index:12;
+    z-index: 50;
+    margin-left: 20px;
+    margin-top: 50px;
 }
 
 .madeSketch{
-    background: rgba(42, 73, 60, 0.582);
+    background:radial-gradient( rgba(42, 73, 60, 0.582) 50%, rgba(120, 133, 127, 0.253) ); 
     min-width: 3849px;
 }
 
@@ -227,6 +286,18 @@ ul.canvas-list {
     border: 1rem solid white;
 }
 
+.gridBand{
+    width:80%;
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(30%,50%));
+    grid-template-rows:auto;
+    margin: 0 auto;
+}
+
+img.boardSketchThumb{
+    max-width: 100%;
+    max-height:auto;
+}
 // .sketchContainer {
 //    display: grid;
 //    grid-template-rows: 1fr 1fr;
@@ -252,18 +323,18 @@ ul.canvas-list {
 }
 
 //this makes a scrolling horizontal window of tiny thumbnails
-// .canvasBand {
-//     margin: 50px 50px 50px 50px;
-//     // background: rgb(156, 129, 129);
-//     //  background:   rgba(42, 73, 60, 0.582); 
-//     //  background:  rgba(42, 73, 60, 0.582); //green from yesterday
-//     //  object-fit: contain;
-//     padding: 10px 10px 10px 10px;
-//     -moz-background-clip: border;     /* Firefox 3.6 */
-//     -webkit-background-clip: border;  /* Safari 4? Chrome 6? */
-//     background-clip: border-box;
-//     column-count: 4;   
-// }
+.sketchBand {
+    margin: 50px 50px 50px 50px;
+    // background: rgb(156, 129, 129);
+    //  background:   rgba(42, 73, 60, 0.582); 
+    //  background:  rgba(42, 73, 60, 0.582); //green from yesterday
+    //  object-fit: contain;
+    padding: 10px 10px 10px 10px;
+    -moz-background-clip: border;     /* Firefox 3.6 */
+    -webkit-background-clip: border;  /* Safari 4? Chrome 6? */
+    background-clip: border-box;
+    column-count: 4;   
+}
 
 
 .sketchForMain{
@@ -273,9 +344,13 @@ ul.canvas-list {
 
 .pinBoard{
     box-shadow: inset 0 0 10px rgba(230, 233, 232, 0.938);
-    margin: 20px;
+  
+    margin-bottom: 20px;
+    
     object-fit: contain;
     padding: 10px;
+    -webkit-column-break-inside: avoid;
+    /* Chrome, Safari, Opera */
   
 }
 
@@ -296,8 +371,8 @@ img.pinThumb {
 // }
 
 .pinBoard:hover{
-    box-shadow: 0 4px 5px rgba(0,0,0,0.2);
-
+   
+    box-shadow: inset 0 0 20px rgba(230, 233, 232, 0.938);
 }
 
 
@@ -323,8 +398,8 @@ img.port {
 .name{
     position: absolute;
     z-index: 21;
-    margin-left: 470px;
-        margin-top: -30px;
+    margin-left: 343px;
+    margin-top: -140px;
 }
 
 .myBoards{
@@ -340,11 +415,17 @@ img.port {
 
 body{
     // background:  rgba(194, 200, 233, 0.185);  
-    background:  rgba(42, 73, 60, 0.582); 
+   
+    background: radial-gradient( rgba(12, 64, 87, 0.678) 3%, rgba(120, 133, 127, 0.151) ); //pretty blue green
+    // background: radial-gradient( rgba(42, 73, 60, 0.582) 50%, rgba(120, 133, 127, 0.253) ); green background
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
-.portforlioContainer{
-    margin: 50px 0px 50px 50px;
+.portfolioContainer{
+    margin-top: 0px;
 }
 
 //rang
@@ -441,4 +522,88 @@ input[type=range] {
   }
   input[type=range]:focus::-ms-fill-upper {
     background: rgba(42, 73, 60, 0.582);
+  }
+
+  img.pinCover {
+      max-height:auto;
+      max-width:500px;
+      margin-left: 700px;
+      margin-top: -500px;
+      position: absolute;
+      z-index: -10;
+  }
+
+  h1.sketchBoardCover {
+      color: rgba(26, 24, 24, 0.404);
+      font-size: 1rem;
+      width: 100%
+    //   margin-left: 
+  }
+
+//   a.mark{
+//     margin-left: 1100px;
+//     margin-top: 100px;
+//   }
+  img.bckimg{
+    max-width: 960px;
+    max-height: auto;
+}
+
+  //media queries
+  @media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: landscape) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .band {
+        column-count: 4;
+        width: 100%;
+        margin: 0px;
+    }
+
+    h2.sketchboardHeader{
+        color: rgba(26, 24, 24, 0.404);
+        font-size: 3.8rem;
+        letter-spacing: 2rem;
+    
+        padding-left: 10px;
+        margin-top: 40px;
+        margin-left: 100px;
+        box-shadow: inset 0 0 10px rgba(230, 233, 232, 0.938);
+    }
+    a.list{
+        font-size: .5rem;
+    }
+    .canvasGrid{
+        display: grid;
+        grid-template-columns: .5fr 1fr 1fr 1fr 1fr 1fr .25fr;
+        grid-template-rows: .25fr 1fr 1fr .3fr;
+    }
+    .canvasContainer{
+        position: absolute;
+        z-index: 1;
+        margin-top: 30px;
+        margin-left: 0px;
+        box-shadow: inset 0 0 40px rgba(243, 247, 246, 0.452);
+        // background: radial-gradient( rgba(42, 73, 60, 0.582) 50%, rgba(120, 133, 127, 0.253) );    
+    }
+
+    .bckimg {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+      
+       
+    }
+ 
+
+    .canvasBand {
+        display: flex;
+        margin-top: 160px;
+        margin-left: 10rem;
+        position: absolute;
+        z-index: -20;
+       
+    }
+
   }
