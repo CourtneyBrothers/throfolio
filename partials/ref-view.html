@@ -17,12 +17,11 @@
 
         <div class="gridBand">
    
-
-        <img src="{{boardCover}}" alt="?" class="pinBoard">
-        <h2>{{pin.name}}</h2>
-       
-        <a href="#!/canvas/{{boardId}}" class="mark">Mark up!</a>
-            
+        <div class="pinBoard">
+            <img src="{{boardCover}}" alt="?" class="boardSketchThumb">
+            <h2>{{pin.name}}</h2>
+            <a href="#!/canvas/{{boardId}}" class="mark">Mark up!</a>
+        </div>  
       
 
              <div ng-repeat="boardSketch in boardSketches">
@@ -31,7 +30,9 @@
                     <div class="boardSketchHeader">
                         <h2>{{boardSketch.name}}</h2>
                         <h2 ng-click="deleteboardSketch(boardSketch.boardSketchId)">Delete sketch</h2>
-                        
+                        <br>
+                        <br>
+                        <br>
                     </div>
 
                    
