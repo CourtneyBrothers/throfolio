@@ -24,7 +24,7 @@ angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $
               let canvas = document.getElementById("pwCanvasMain");
               // document.body.appendChild(canvas); stop appenings
               let canvasURL = canvas.toDataURL();
-              console.log("made url", canvas.toDataURL());
+             
 //CB add this
               $scope.newCanvas.uid = firebase.auth().currentUser.uid;
               $scope.newCanvas.username = firebase.auth().currentUser.displayName;
@@ -32,7 +32,7 @@ angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $
               $scope.newCanvas.boardId = $routeParams.boardId;
 
               FbFactory.addCanvas($scope.newCanvas).then(data =>{
-                console.log("new canvas", data);
+           
                 $route.reload(`canvas/${$scope.newCanvas.boardId}`);
               });
           };
@@ -40,7 +40,7 @@ angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $
       $scope.boardId = $routeParams.boardId; // CB SCOPE BOARDID
   
           FbFactory.getPins($routeParams.boardId).then(data => {
-            console.log("pins data", data);
+          
             $scope.pins = data;
 
           });
@@ -48,17 +48,17 @@ angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $
 
   
           $scope.savePin = () => {
-            console.log("New Pin", $scope.newPin);
+
             // I think "$routeParams.id" will be the boards id?
             $scope.newPin.boardId = $routeParams.boardId;
             $scope.newPin.username = firebase.auth().currentUser.displayName;
-            console.log("route id", $routeParams.id, "route", $routeParams);
+          
             $scope.newPin.uid = firebase.auth().currentUser.uid;
   
     
             FbFactory.addPin($scope.newPin)
               .then(data => {
-                console.log("data in pin add pin", data);
+           
                 $route.reload(`portfolio/${$scope.newPin.boardId}`); // this was pins but that route doesnt exist -CB
               })
               .catch(error => {
@@ -68,11 +68,10 @@ angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $
           };
 
           $scope.getNameOfBoard = () => {
-            console.log("get");
             FbFactory.getBoard($routeParams.boardId).then(data => {
-                console.log("data in getBoard", data);
+         
               $scope.boardName = data.data.name;
-              console.log("scope.boardName", $scope.boardName);
+         
             });
           };
   
@@ -80,7 +79,6 @@ angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $
 
           $scope.getBoardCover = () =>{
             FbFactory.getBoard($routeParams.boardId).then(data => {
-              console.log("data in getBoardCover", data);
             $scope.boardCover = data.data.url;
            
             });
@@ -107,12 +105,11 @@ angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $
                 $scope.newPin.url = url;
                 // TODO $scope.newPin.name = 
 
-                console.log($scope.newPin, "new PIn");
 
                 FbFactory.addPin($scope.newPin)
         
               .then(data => {
-                console.log("data in pin add pin", data);
+          
                 $route.reload(`portfolio/${$scope.newPin.boardId}`); // this was pins but that route doesnt exist -CB
               })
               .catch(error => {
@@ -125,18 +122,21 @@ angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $
           $scope.getBoardSketches = () => {
             FbFactory.getCanvas($routeParams.boardId).then(data => {
                 $scope.boardSketches = data.data;
-                console.log("success");
               }
             );
           };
-
+        
           $scope.getBoardSketches();
 
+
+          //HERE
+          $scope.deleteSketch = (fbKey) => {
+            FbFactory.removeSketch(fbKey);
+          };
+
+
           $scope.getCanvasNames = () =>{
-            console.log("get canvas name");
             FbFactory.getCanvas($routeParams.boardId).then(data => {
-              
-              console.log("canvas data in get canvas names", data.data);
               $scope.canvases = data.data;
             }
           );
@@ -156,7 +156,6 @@ angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $
 
 
           $scope.deletePin = (pinId) => {
-            console.log("delete", pinId);
             
             FbFactory.deletePins(pinId) .then(() => {
               
@@ -178,7 +177,6 @@ angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $
               let canvas = document.getElementById("pwCanvasMain");
               // document.body.appendChild(canvas); stop appenings
               let canvasURL = canvas.toDataURL();
-              console.log("made url", canvas.toDataURL());
 //CB add this
               $scope.newCanvas.uid = firebase.auth().currentUser.uid;
               $scope.newCanvas.username = firebase.auth().currentUser.displayName;
@@ -186,7 +184,6 @@ angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $
               $scope.newCanvas.boardId = $routeParams.boardId;
 
               FbFactory.addCanvas($scope.newCanvas).then(data =>{
-                console.log("new canvas", data);
                 $route.reload(`canvas/${$scope.newCanvas.boardId}`);
               });
           };
@@ -205,10 +202,7 @@ angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $
           $scope.boardId = $routeParams.boardId;
 
             //get pins
-          console.log("not logged in to see pins");
-          console.log($routeParams.boardId, "route parms board id");
           FbFactory.getPins($routeParams.boardId).then(data => {
-            console.log("pins data", data);
             $scope.pins = data;
           });
 
@@ -219,9 +213,7 @@ angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $
 
       $scope.getBoardCover = () =>{
         FbFactory.getBoard($routeParams.boardId).then(data => {
-          // console.log("data in getBoardCover", data);
         $scope.boardCover = data.data.url;
-        // console.log("scope.boardCover", $scope.boardCover);
         });
       };
       
@@ -229,7 +221,6 @@ angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $
     $scope.getBoardCover();
   
       $scope.backToBoards = () => {
-        console.log("clicked");
         $location.url("/boards");
       };
   

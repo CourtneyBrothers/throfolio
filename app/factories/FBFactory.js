@@ -38,12 +38,10 @@ angular.module("Throfolio").factory("FbFactory", ($http, $q) => {
     }
 // add portfolio to unauthpage
     function getBoardsPublic(username) {
-        console.log("get boards public username", username);
         return $q((resolve, reject) => {
             $http
                 .get(`https://throfolio.firebaseio.com/pieces.json?orderBy="username"&equalTo="${username}"`)
                 .then((boards) => {
-                    console.log("boards in get public boards", boards);
                     let keys = Object.keys(boards.data);
                     keys.forEach(key => {
                         boards.data[key].boardId = key;
@@ -73,7 +71,6 @@ angular.module("Throfolio").factory("FbFactory", ($http, $q) => {
                 })
                 .catch((error) => {
                     reject(error);
-                    console.log("eroor",error);
                 });
         });
     }
@@ -113,11 +110,9 @@ angular.module("Throfolio").factory("FbFactory", ($http, $q) => {
                 .get(`https://throfolio.firebaseio.com/canvas.json?orderBy="boardId"&equalTo="${boardId}"`)
                 .then((data) => {
                     resolve(data);
-                    console.log(" canvas data in fbf",data);
                 })
                 .catch((error) => {
                     reject(error);
-                    console.log("eroor",error);
                 });
         });
     }
@@ -128,7 +123,6 @@ angular.module("Throfolio").factory("FbFactory", ($http, $q) => {
                 .get(`https://throfolio.firebaseio.com/pieces/${boardId}.json`)
                 .then((data) => {
                     resolve(data);
-                    console.log("data in get board", data);
                 })
                 .catch((error) => {
                     reject(error);
@@ -175,6 +169,18 @@ angular.module("Throfolio").factory("FbFactory", ($http, $q) => {
                 });
         });
     }
+    function removeSketch(FbId){
+        return $q((resolve, reject) => {
+            $http
+                .delete(`https://throfolio.firebaseio.com/canvas/${FbId}.json`)
+                .then((data) => {
+                    resolve(data);
+                })
+                .catch((error) => {
+                    reject(error);
+                });
+        });
+    }
 
     function removeBoards(FbId){
         return $q((resolve, reject) => {
@@ -211,7 +217,6 @@ angular.module("Throfolio").factory("FbFactory", ($http, $q) => {
                 .get(`https://throfolio.firebaseio.com/canvas.json?orderBy="name"&equalTo="${name}"`)
                 .then((data) => {
                     resolve(data);
-                    console.log(" canvas  name data in cover",data);
                 })
                 .catch((error) => {
                     reject(error);
@@ -223,6 +228,6 @@ angular.module("Throfolio").factory("FbFactory", ($http, $q) => {
 
    
 
-    return {addBoard, getBoards, getPins, addPin, getBoard, getAllBoards,getBoardsPublic, addCanvas, getCanvas, removeBoards, deletePins, getCoverCanvas, getAllSketches};
+    return {addBoard, getBoards, getPins, addPin, getBoard, getAllBoards,getBoardsPublic, addCanvas, getCanvas, removeBoards, deletePins, getCoverCanvas, getAllSketches, removeSketch};
 
 });

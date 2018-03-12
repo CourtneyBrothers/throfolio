@@ -4,12 +4,11 @@ angular.module("Throfolio").controller("PortMainCtrl", function ($scope, FbFacto
 
     //set uid to display name here and pass that variable in 
    
-            console.log("not logged in to see upload boards");
+            
             FbFactory.getAllBoards()
             .then((boards) => {
                 $scope.boards = boards;
-                console.log("boars in get all unauth boards",boards);
-                console.log($scope.boards, "scope.boards");
+              
             })
             .catch((error) => {
                 console.log("getBoards didn't work", error);
