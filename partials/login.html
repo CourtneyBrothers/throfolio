@@ -1,0 +1,28 @@
+
+
+<div class="flex">
+        <div class="myBoards" class="name">
+            <h3>sketchbook</h3>
+                <h2>Login to start drawing</h2>
+        </div>
+    
+
+    <div class ="portfolioContainer">
+
+        <div class="band">  
+            <div class="pinBoard">
+                <img src="app/Screen Shot 2018-03-15 at 3.45.07 PM.png">
+            </div>
+            <h1>SKETCHBOOK</h1>
+            <h1>Sketchbook is an app to pracice drawing and sketching</h1>
+            <h1>Once you log in you can save a collection of images from the internet as long as you copy the image address</h1>
+            <h1>Click the markup button and you can view your image on a canvas wher eyou can select colors and line widths</h1>
+            <div ng-repeat="sketch in sketches">
+                    <div class = "pinBoard">
+                                <img src={{sketch.url}} alt="?" class="sketchForMain" class="boardThumb">
+                    </div>
+        </div>
+    </div>
+
+
+</div>
