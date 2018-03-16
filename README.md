@@ -1,10 +1,12 @@
 # Sketchbook
+![Alt text](/.sass-cache/screenshots/Screen Shot 2018-03-12 at 8.20.53 AM.png "Optional Title")
 
 # Project Title
 
 Sketchbook is a digital interface for users to create, store, and view freeform sketches made with HTML5 canvas over images uploaded from the internet.  This project was created in AngularJS as a NSS capstone exercise.
 
 ## Getting Started
+![Alt text](.sass-cache/screenshots/Screen Shot 2018-03-12 at 8.21.01 AM.png "Optional Title")
 
 
 ### Prerequisites
@@ -39,9 +41,11 @@ grunt-contrib-nodeunit grunt-contrib-sass grunt-contrib-watch jshint matchdep
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+in order to use with firebase you will need an additional fb-creds folder with a firebase api key 
+for the purposes of this project and to demonstrate concept acquisition I have kept my keys private
 
 ## Built With
+![Alt text](.sass-cache/screenshots/Screen Shot 2018-03-12 at 8.22.14 AM.png "Optional Title")
 
 * [angular-canvas-painter](https://www.npmjs.com/package/angular-canvas-painter) 
 ## Contributing
