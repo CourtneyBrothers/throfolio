@@ -1,12 +1,12 @@
 # Sketchbook
-![Alt text](screenshots/Screen Shot 2018-03-12 at 8.20.53 AM.png)
+![Alt text](./screenshots/canvas.png)
 
 # Project Title
 
 Sketchbook is a digital interface for users to create, store, and view freeform sketches made with HTML5 canvas over images uploaded from the internet.  This project was created in AngularJS as a NSS capstone exercise.
 
 ## Getting Started
-![Alt text](screenshots/Screen Shot 2018-03-12 at 8.20.53 AM.png)
+![Alt text](./screenshots/wings.png)
 
 
 ### Prerequisites
