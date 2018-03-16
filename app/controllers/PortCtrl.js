@@ -19,7 +19,7 @@ angular.module("Throfolio").controller("PortCtrl", function ($scope, FbFactory, 
             FbFactory.getBoards()
                 .then((boards) => {
                     $scope.boards = boards;
-                    console.log("boards in get boards", boards);
+                
                 })
                 .catch((error) => {
                     console.log("getBoards didn't work", error);
@@ -31,13 +31,13 @@ angular.module("Throfolio").controller("PortCtrl", function ($scope, FbFactory, 
             $scope.savePortfolio = () => {
                 $scope.newBoard.uid = firebase.auth().currentUser.uid;
 
-                console.log("firebase.auth().currentUser",firebase.auth().currentUser);
+          
                 $scope.newBoard.username = firebase.auth().currentUser.displayName;
 
                 // $scope.newBoard.username = firebase.auth().currentUser. ///CB NOT DONE HERE TODO
                 FbFactory.addBoard($scope.newBoard)
                     .then((board) => {
-                        console.log("board in addBoard", board);
+            
                         // $location.url("/boards");
                         $route.reload("/portfolio");
                         
@@ -61,7 +61,7 @@ angular.module("Throfolio").controller("PortCtrl", function ($scope, FbFactory, 
 
                         FbFactory.addBoard($scope.newBoard)
                         .then((board) => {
-                            console.log("board in addBoard", board);
+                          
                             // $location.url("/boards");
                             $route.reload("/portfolio");
                             
@@ -73,7 +73,7 @@ angular.module("Throfolio").controller("PortCtrl", function ($scope, FbFactory, 
 
             
             $scope.deleteBoard = (boardId) => {
-                console.log("boardId", boardId); 
+            
                 FbFactory.removeBoards(boardId)
                     .then((data) => {
                         FbFactory.getPins(boardId)
@@ -91,11 +91,9 @@ angular.module("Throfolio").controller("PortCtrl", function ($scope, FbFactory, 
 
        
         } else {
-            console.log("not logged in to see upload boards");
-            console.log("routeParams", $routeParams.username);
+    
             FbFactory.getBoardsPublic($routeParams.username)
             .then((boards) => {
-                console.log("$scope.boards", $scope.boards);
                 $scope.boards = boards;
                 
 

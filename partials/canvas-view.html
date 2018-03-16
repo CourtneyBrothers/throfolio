@@ -5,8 +5,8 @@
             <h2 > view saved sketches </h2>
 
                 <ul ng-repeat="canvas in canvases">
-                    <li><a ng-href="#!/canvases/{{canvas.boardId}}" class="list">{{canvas.name}}</a></li>
-                    <!-- <h2><a ng-href="#!/sketches/{{canvas.boardId}}" class="list" > / view without background</a></h2> -->
+                        <h2 ng-click="toggleFilter()" class="sketchName">{{canvas.name}}</h2>
+                        <img ng-src="{{canvas.url}}" alt="?" class="madeCanvas" ng-show="toggle">
                 </ul>
         </div>
 
