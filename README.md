@@ -1,5 +1,5 @@
 # Sketchbook
-![Alt text](./screenshots/Screen Shot 2018-03-12 at 8.20.53 AM.png ")
+![Alt text](./screenshots/Screen Shot 2018-03-12 at 8.20.53 AM.png)
 
 # Project Title
 
@@ -45,7 +45,7 @@ in order to use with firebase you will need an additional fb-creds folder with a
 for the purposes of this project and to demonstrate concept acquisition I have kept my keys private
 
 ## Built With
-![Alt text](./screenshots/Screen Shot 2018-03-12 at 8.22.14 AM.png )
+![Alt text](./screenshots/Screen Shot 2018-03-12 at 8.22.14 AM.png)
 
 * [angular-canvas-painter](https://www.npmjs.com/package/angular-canvas-painter) 
 ## Contributing
