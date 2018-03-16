@@ -7,7 +7,7 @@ angular.module("Throfolio", ["ngRoute","pw.canvas-painter", 'ng-slide-down']) //
     .config($routeProvider => {
         $routeProvider
         .when("/", {
-            templateUrl: "partials/login.html",
+            templateUrl: "partials/landing-view.html",
             controller: "PortMainCtrl"
         })
         .when("/portfolio", {
