@@ -1,30 +1,31 @@
-
-<div class = "canvasContainer" >
+<div class="canvasContainer">
     <div class="canvasGrid">
         <div id="canvasList" class="canvas-list">
-            <h2 > view saved sketches </h2>
+            <h2> view saved sketches </h2>
 
-                <ul ng-repeat="canvas in canvases">
-                        <h2 ng-click="toggleFilter()" class="sketchName">{{canvas.name}}</h2>
-                        <img ng-src="{{canvas.url}}" alt="?" class="madeCanvas" ng-show="toggle">
-                </ul>
+            <ul ng-repeat="canvas in canvases">
+                <h2 ng-click="toggleFilter()" class="sketchName">{{canvas.name}}</h2>
+                <img ng-src="{{canvas.url}}" alt="?" class="madeCanvas" ng-show="toggle">
+            </ul>
         </div>
 
         <div class="saveCanvas">
-             <button ng-click="save()" class="saveBtn">save</button>
+            <button ng-click="save()" class="saveBtn">save</button>
 
-            <input type="text" placeholder="Canvas Name" ng-model="newCanvas.name" > <!-- canvas name?-->
+            <input type="text" placeholder="Canvas Name" ng-model="newCanvas.name">
+            <!-- canvas name?-->
         </div>
 
-        <div pw-color-selector="['#000', '#9CB199','#153974','#fff','#722626','	#ffb6c1','#D3D3D3','#A9A9A9','#ADD8E6']" color="selectedColor" class="color-selector">
-        
+        <div pw-color-selector="['#000', '#9CB199','#153974','#fff','#722626','	#ffb6c1','#D3D3D3','#A9A9A9','#ADD8E6']" color="selectedColor"
+            class="color-selector">
+
         </div>
-            
+
 
         <input type="range" min="0.01" max="20" ng-model="selectedLineWidth" class="lineWidthSelector" class="slider">
-        
-        
-<!--          post -mvp
+
+
+        <!--          post -mvp
         <div class="tools">
             <ul>
                 <li>pen</li>
@@ -34,7 +35,8 @@
             </ul>
         </div> -->
 
-        <div pw-canvas options="{width: 960, height:1000, color: selectedColor, backgroundColor:'hsla(50, 33%, 25%, 0.01)', lineWidth: selectedLineWidth}" id="canvas" class="canvas-view"></div>
+        <div pw-canvas options="{width: 960, height:1000, color: selectedColor, backgroundColor:'hsla(50, 33%, 25%, 0.01)', lineWidth: selectedLineWidth}"
+            id="canvas" class="canvas-view"></div>
 
         <div class="selected">selected width: {{selectedLineWidth}}</div>
 
@@ -57,8 +59,8 @@
     </div>
 </div>
 
-<div class="canvasBand"> 
-        <!-- <div ng-repeat="pin in pins"> 
+<div class="canvasBand">
+    <!-- <div ng-repeat="pin in pins"> 
                     <div class="pinCard" id="pin"> 
                         <img src="{{pin.url}}" alt="?" class="pinThumb">
                         <div class="pinHeader">
@@ -66,8 +68,8 @@
                         </div>
                     </div>
         </div> -->
-        <div class="bckground" id="mainImage">  
-                <img src="{{boardCover}}" alt="?" class="bckimg">
-        </div>
-    </div> 
+    <div class="bckground" id="mainImage">
+        <img src="{{boardCover}}" alt="?" class="bckimg">
+    </div>
+</div>
 </body>

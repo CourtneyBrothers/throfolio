@@ -2,6 +2,9 @@ html{
    height:  100%;
 }
 
+
+
+
 ///TYPOGRAPHY
 p, a, h1, h2, h3 {
     
@@ -70,7 +73,7 @@ ul.canvas-list {
     display: inline-block;
 }
 
-///
+///Buttons
 
 button.saveBtn {
     border-color: rgba(255, 255, 255, 0.151);
@@ -92,6 +95,9 @@ button.saveBtn {
 button.saveBtn:hover{
     box-shadow: inset 0 0 30px rgb(241, 236, 236);
 }
+
+
+
 
 img{
     border-radius: 2%;
@@ -159,9 +165,6 @@ img{
   .pwColor.active {
     box-shadow: inset 0 0 5px rgb(241, 236, 236);
   }
-
-
- 
 
 //   .canvasContainer {
 //       margin: 25px 50px 75px 100px;
@@ -418,6 +421,8 @@ img.port {
     background-image: url(app/thickwhitepaintstroke.png);
 }
 
+
+//Background color 
 body{
     // background:  rgba(194, 200, 233, 0.185);  
     background: rgba(255, 255, 255, 0.103);
@@ -433,7 +438,7 @@ body{
     margin-top: 0px;
 }
 
-//rang
+//LINE WIDTH SELECTOR STYLING
 .lineWidthSelector{
     background: rgba(0,0,0,0);
     position: absolute;
@@ -528,6 +533,9 @@ input[type=range] {
   input[type=range]:focus::-ms-fill-upper {
     background: rgba(42, 73, 60, 0.582);
   }
+//END line width selector styling
+
+
 
   img.pinCover {
       max-height:auto;

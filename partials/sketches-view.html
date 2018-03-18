@@ -1,13 +1,11 @@
 <h3 class="sketchHeader">Sketches/</h3>
 <div class="madeSketch">
-        
-        <div class = "sketchContainer" >
-    
-                <div class="list-of-made-sketches" class="sketchGrid">
-                        <div ng-repeat="canvas in canvases" class="sketch">
-                            <h1>{{canvas.name}}</h1>
-                            <img ng-src="{{canvas.url}}" alt="?" class="sketchImg">
-                        </div>   
-                </div>
+    <div class="sketchContainer">
+        <div class="list-of-made-sketches" class="sketchGrid">
+            <div ng-repeat="canvas in canvases" class="sketch">
+                <h1>{{canvas.name}}</h1>
+                <img ng-src="{{canvas.url}}" alt="?" class="sketchImg">
+            </div>
         </div>
-</div>     
+    </div>
+</div>
