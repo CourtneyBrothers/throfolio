@@ -1,44 +1,35 @@
-<div class = "pinContainer" >
+<div class="pinContainer">
 
 
     <div class="sketchBoardHeader">
         <h1 class="sketchBoardCover">Board: {{boardName}}</h1>
     </div>
-    <!-- <button ng-click="">Mark up!</button> -->
-    <div class="coverBoard" id="mainImage"> <!-- used to be class pinboard -->
-                       
-        <!-- <img src="{{boardCover}}" alt="?" class="pinCover">
-            <h2>{{pin.name}}</h2> -->
-           
-            <!-- <a href="#!/canvas/{{boardId}}" class="mark">Mark up!</a> -->
-    
-            
-        </div>
+    <div class="coverBoard" id="mainImage"> 
 
-        <div class="gridBand">
-   
+    <div class="gridBand">
+
         <div class="pinBoard">
             <img src="{{boardCover}}" alt="?" class="boardSketchThumb">
             <h2>{{pin.name}}</h2>
             <a href="#!/canvas/{{boardId}}" class="mark">Mark up!</a>
-        </div>  
-      
+        </div>
 
-             <div ng-repeat="boardSketch in boardSketches">
-                 <div class="pinBoard" id="pin"> 
+
+        <div ng-repeat="boardSketch in boardSketches">
+            <div class="pinBoard" id="pin">
                 <img src="{{boardSketch.url}}" alt="?" class="boardSketchThumb">
-                    <div class="boardSketchHeader">
-                        <h2>{{boardSketch.name}}</h2>
-                        <h2 ng-click="deleteSketch(boardSketch.boardSketchId)">Delete sketch</h2>
-                        <br>
-                        <br>
-                        <br>
-                    </div>
+                <div class="boardSketchHeader">
+                    <h2>{{boardSketch.name}}</h2>
+                    <h2 ng-click="deleteSketch(boardSketch.boardSketchId)">Delete sketch</h2>
+                    <br>
+                    <br>
+                    <br>
+                </div>
 
-                   
+
             </div>
         </div>
 
     </div>
 
- </div>
+</div>

@@ -1,41 +1,17 @@
-<div class = "pinContainer" >
-
-
-        <h1>Board: {{boardName}}</h1>
-       
-        <a href="#!/canvas/{{boardId}}">Mark up!</a>
-        
-        <!-- <div pw-canvas options="{width: 1000, height:1000, color: '#000', backgroundColor:'hsla(50, 33%, 25%, 0.01)', lineWidth:0.5}" id="canvas"></div> link --> 
-        <!-- <div id="newPinCard" class ="pinCard"> <!cb move thing into card grid -->
-            <!-- <input type="file" id="pinButton" onchange="angular.element(this).scope().addPinToCloud(event.currentTarget.files[0])" ng-model="file" />
-
-                <input type="text" placeholder="Pin Name" ng-model="newPin.name">
-                <br>
-                <input type="text" placeholder="Image URL" ng-model="newPin.url">
-                <button ng-click="savePin()">Add Pin</button>
-            </div> -->
-             
-            <div class="pinBand"><!-- cb add class band for grid styling -->
-             
-                <div ng-repeat="pin in pins"> 
-                    <div class="pinCard" id="pin"> <!-- cb add class card for grid styling -->
-                        <img src="{{pin.url}}" alt="?" class="pinThumb">
-                        <div class="pinHeader">
-                            <h2>{{pin.name}}</h2>
-                        
-                        </div>
-                      
+<div class="pinContainer">
+    <h1>Board: {{boardName}}</h1>
+    <a href="#!/canvas/{{boardId}}">Mark up!</a>
+    <div class="pinBand">
+        <div ng-repeat="pin in pins">
+            <div class="pinCard" id="pin">
+                <img src="{{pin.url}}" alt="?" class="pinThumb">
+                <div class="pinHeader">
+                    <h2>{{pin.name}}</h2>
                 </div>
-             
             </div>
-            <div class="pinCard" id="mainImage"> <!-- cb add board image into ref view for comp -->
-                       
-                <img src="{{boardCover}}" alt="?" class="pinCover">
-                    <!-- <h2>{{pin.name}}</h2> -->
-                   
-
-            
-                    
-                </div>
         </div>
-     </div>
+        <div class="pinCard" id="mainImage">
+            <img src="{{boardCover}}" alt="?" class="pinCover">
+        </div>
+    </div>
+</div>

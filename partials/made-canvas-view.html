@@ -1,29 +1,15 @@
-
-
 <div class="madeCanvasGrid">
-       
-    <div class = "pinContainer" >
 
-            <div id="canvasList" class="list-of-made-canvases">
-                <h1>click to view sketch</h1>
-                    <div ng-repeat="canvas in canvases">
-                        <!-- <h2 ng-click="toggleFilter()" class="sketchName">{{canvas.name}}</h2>
-                        <img ng-src="{{canvas.url}}" alt="?" class="madeCanvas" ng-show="toggle"> -->
-                    </div>   
+    <div class="pinContainer">
+
+        <div id="canvasList" class="list-of-made-canvases">
+            <h1>click to view sketch</h1>
+            <div ng-repeat="canvas in canvases">
             </div>
         </div>
+    </div>
 
-            <div class="madeCanvasBackground"> <!-- cb add board image into ref view for comp --> 
-                <img src="{{boardCover}}" alt="?" ng-hide="showme" class="madeBckground">
-            </div>
+    <div class="madeCanvasBackground">
+        <img src="{{boardCover}}" alt="?" ng-hide="showme" class="madeBckground">
+    </div>
 </div>
-
-  
-
-    <!-- <div id="canvasList" class="list-of-made-canvases">
-            <h1>canvases</h1>
-                <div ng-repeat="canvas in canvases">
-                    <h1 ng-click="canvasShow != canvasShow">{{canvas.name}}</h1>
-                    <img ng-src="{{canvas.url}}" alt="?" class="madeCanvas" ng-show="canvasShow">
-                
-        </div>  -->
