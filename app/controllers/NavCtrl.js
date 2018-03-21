@@ -13,7 +13,7 @@ angular.module("Throfolio").controller("NavCtrl", function($scope, AuthFactory, 
 		},
 		{
 			name: "Logout"
-			//placeholder function// 
+
 		}
 	];    
 

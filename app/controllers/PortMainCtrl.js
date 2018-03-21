@@ -2,7 +2,6 @@
 
 angular.module("Throfolio").controller("PortMainCtrl", function ($scope, FbFactory, $routeParams, $location, $route, $window) {
 
-	//set uid to display name here and pass that variable in 
    
             
 	FbFactory.getAllBoards()
