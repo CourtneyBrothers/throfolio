@@ -1,9 +1,8 @@
 "use strict";
 
-angular.module("Throfolio", ["ngRoute","pw.canvas-painter", "ng-slide-down"]) // include pw canvas painter
+angular.module("Throfolio", ["ngRoute","pw.canvas-painter"]) // include pw canvas painter
 // .constant('_') //may want lodash maybe not
 
-//These routes ( .when x 3 are for user interface)
 	.config($routeProvider => {
 		$routeProvider
 			.when("/", {
@@ -11,7 +10,7 @@ angular.module("Throfolio", ["ngRoute","pw.canvas-painter", "ng-slide-down"]) //
 				controller: "PortMainCtrl"
 			})
 			.when("/demo",{
-				templateUrl:"partials/Login",
+				templateUrl:"partials/login.html",
 				controller:"LoginPageDisplayCtrl"
 			})
 			.when("/portfolio", {
@@ -45,16 +44,10 @@ angular.module("Throfolio", ["ngRoute","pw.canvas-painter", "ng-slide-down"]) //
 				controller:"RefCtrl"
 			})
 			.otherwise("/");
-		//more routes for unauthenticated viewers to view specific profiles
-
+	
 	})
 
 
 	.run(FBcreds => {
-		// let creds = FBcreds;
-		// let authConfig = {  //try dh way
-		//     apiKey: creds.apiKey,
-		//     authDomain: creds.authDomain
-		// };
 		firebase.initializeApp(FBcreds);
 	});

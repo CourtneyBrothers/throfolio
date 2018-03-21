@@ -99,7 +99,7 @@ angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $
 					// TODO: $scope.newPin.name = 
 					FbFactory.addPin($scope.newPin)
 						.then(data => {
-							$route.reload(`portfolio/${$scope.newPin.boardId}`); // this was pins but that route doesnt exist -CB
+							$route.reload(`portfolio/${$scope.newPin.boardId}`);
 						})
 						.catch(error => {
 							console.log(error);
@@ -116,7 +116,7 @@ angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $
 			$scope.getBoardSketches();
 
 
-			//HERE
+
 			$scope.deleteSketch = (fbKey) => {
 				FbFactory.removeSketch(fbKey);
 			};
@@ -129,16 +129,6 @@ angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $
 			};
 
 			$scope.getCanvasNames(); //call names
-
-			//took out getting single canvas 
-			// $scope.getCanvasTheOne = (canvasName) => {
-			//   console.log(canvasName, "canvas name");
-			//   FbFactory.getCoverCanvas(canvasName).then(data => {
-			//     console.log(" conver canvas data", data.data);
-			//     $scope.savedCanvas = data.data;
-			//     console.log($scope.savedCanvas, "savedCanvas");
-			//   });
-			// };
 
 
 			$scope.deletePin = (pinId) => {
@@ -154,38 +144,9 @@ angular.module("Throfolio").controller("RefCtrl", function ($scope, FbFactory, $
 				this.toggle = !this.toggle;
 			};
 
-			// console.log("$scope.canvasShow", $scope.canvasShow);
 
 
 		} else {
-
-			//users without login cannot save or add canvas
-
-			// $scope.save  = function(){
-			// 	// html2CanvasAngular.renderBody().then(function(canvas){
-			// 	let canvas = document.getElementById("pwCanvasMain");
-			// 	// document.body.appendChild(canvas); stop appenings
-			// 	let canvasURL = canvas.toDataURL();
-			// 	//CB add this
-			// 	$scope.newCanvas.uid = firebase.auth().currentUser.uid;
-			// 	$scope.newCanvas.username = firebase.auth().currentUser.displayName;
-			// 	$scope.newCanvas.url = canvasURL;
-			// 	$scope.newCanvas.boardId = $routeParams.boardId;
-
-			// 	FbFactory.addCanvas($scope.newCanvas).then(data =>{
-			// 		$route.reload(`canvas/${$scope.newCanvas.boardId}`);
-			// 	});
-			// };
-
-
-			// $scope.save  = function(){
-			//   // html2CanvasAngular.renderBody().then(function(canvas){
-			//     // document.body.appendChild(canvas); stop appending
-			//     let canvas = document.getElementById("pwCanvasMain");
-			//     console.log("canvas from save", canvas);
-			//     console.log("url",canvas.toDataURL());
-			//   });
-			// };
 
 
 			$scope.boardId = $routeParams.boardId;

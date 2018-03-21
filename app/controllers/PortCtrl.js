@@ -80,16 +80,6 @@ angular.module("Throfolio").controller("PortCtrl", function ($scope, FbFactory, 
 		} else {
 			//TODO: unauthenticated routes 
 
-			FbFactory.getBoardsPublic($routeParams.username)
-				.then((boards) => {
-					$scope.boards = boards;
-
-
-				})
-				.catch((error) => {
-					console.log("getBoards didn't work", error);
-				});
-
 		}
 	});
 });
