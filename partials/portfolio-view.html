@@ -1,21 +1,15 @@
 <div class="portfolioContainer">
     <h2 class="sketchboardHeader" class="pinBoard">SKETCHBOARDS</h2>
-
-
     <div class="band">
-        <!-- cb add class for grid styling -->
         <div class="pinBoard">
-
             <input type="file" id="fileButton" onchange="angular.element(this).scope().addImageToCloud(event.currentTarget.files[0])"
                 ng-model="file" />
-            <!-- for cloud upload  function-->
             <br>
             <input type="text" placeholder="Picture Name" ng-model="newBoard.name">
             <input type="text" placeholder="Image URL" ng-model="newBoard.url">
             <br>
             <h2 ng-click="savePortfolio()">Add Canvas</h2>
             <h2 ng-click="storeImage()">Add Canvas from file</h2>
-
         </div>
 
         <div ng-repeat="board in boards">
@@ -28,8 +22,5 @@
                 <a href="#!/canvas/{{board.boardId}}">Mark up!</a>
             </div>
         </div>
-    </div>
-    <div>
-
     </div>
 </div>
