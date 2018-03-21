@@ -1,7 +1,6 @@
 "use strict";
 
-angular.module("Throfolio", ["ngRoute","pw.canvas-painter"]) // include pw canvas painter
-// .constant('_') //may want lodash maybe not
+angular.module("Throfolio", ["ngRoute","pw.canvas-painter"])
 
 	.config($routeProvider => {
 		$routeProvider
