@@ -2,20 +2,14 @@ html{
    height:  100%;
 }
 
-
-
-
 ///TYPOGRAPHY
 p, a, h1, h2, h3 {
-    
-    font-family: 'Montserrat', serif;
-     
+    font-family: 'Montserrat', serif; 
 }
 
 h1{
     font-size: 1rem;
-    color: rgb(14, 13, 13);
-    
+    color: rgb(14, 13, 13);    
 }
 
 h2.delete:hover{
@@ -24,7 +18,6 @@ h2.delete:hover{
 a {
     text-decoration: none;
     color:white;
-
 }
 
 a.link{
@@ -35,7 +28,6 @@ h3 {
     color :rgba(243, 245, 244, 0.418);;
     font-size: 1.5rem;
     letter-spacing: 1.3rem;
-
 }
 h3.sketchHeader {
     color: rgba(26, 24, 24, 0.404);
@@ -53,8 +45,6 @@ h2.sketchboardHeader{
     box-shadow: inset 0 0 50px rgba(230, 233, 232, 0.938);
     padding-left: 151px;
     position: fixed;
-
-    
 }   
 
 h2 {
@@ -65,7 +55,6 @@ h2 {
 
 ul.nav{
     list-style: none;
-
 }
 
 ul.canvas-list {
@@ -96,9 +85,6 @@ button.saveBtn:hover{
     box-shadow: inset 0 0 30px rgb(241, 236, 236);
 }
 
-
-
-
 img{
     border-radius: 2%;
 }
@@ -107,15 +93,9 @@ img{
   
 }
 
-
 .refBand {
     column-count: 2;
 }
-// canvas
-
-// body {
-//     margin: 0;     
-// }
 
 #board {
     margin: 0 auto;
@@ -126,33 +106,12 @@ img{
     border: 3px dotted #000;       
 }
 
-// .pinContainer{
-
-// }
-
-
-// #canvas {
-//     position: absolute;
-
-
-// }
-
-// .pwCanvasPaint canvas:first-child {
-    // box-shadow: 2px 2px 8px rgba(0,0,0,0.1), -1px -1px 4px rgba(0,0,0,0.1);
-    // -webkit-box-shadow: 2px 2px 8px rgba(0,0,0,0.1), -1px -1px 4px rgba(0,0,0,0.1);
-    // box-shadow: inset 0 0 2rem rgba(36, 107, 95, 0.452);
-   
-//   }
-
-//palette styling
-
-
 .pwColorSelector {
     list-style: none;
 
-  }
+}
 
-  .pwColor {
+.pwColor {
     border-radius: 50%;
     width: 4rem;
     height: 4rem;
@@ -160,50 +119,38 @@ img{
     box-shadow: inset 0 0 30px rgb(241, 236, 236);
     display: inline-block;
 
-  }
+}
 
-  .pwColor.active {
+.pwColor.active {
     box-shadow: inset 0 0 5px rgb(241, 236, 236);
-  }
+}
 
-//   .canvasContainer {
-//       margin: 25px 50px 75px 100px;
-//   }
 
-  .tools {
-      grid-row: 2/6;
-      grid-column: 1/1;
+.tools {
+    grid-row: 2/6;
+    grid-column: 1/1;
 
-  }
-  .color-selector {
+}
+.color-selector {
       grid-row: 1/4;
       grid-column:2/7;
-    //   box-shadow: inset 0 0 10px rgba(36, 107, 95, 0.452);
-  }
+}
 
 .canvas-list {
     grid-row:2/4;
     grid-column: 1/7;
     padding-left: 5px;
     z-index:55;
-    // box-shadow: inset 0 0 10px rgba(36, 107, 95, 0.452);
-
 }
 .lineWidthSelector {
     grid-row: 4/4;
     grid-column: 3/7;
 }
-
-// .lineWidthSelector {
-   
-//     transform: rotate(-90deg);
-// }
 .selected {
     grid-row: 4/4;
     grid-column: 6/7;
 }
 .canvas-view{
-  
     grid-row: 2/4;
     grid-column: 2/6;
     z-index:203;
@@ -214,23 +161,18 @@ img{
     grid-column: 7/7;
 
 }
-
 .canvasGrid {
     display: grid;
     grid-template-columns: .5fr 1fr 1fr 1fr 1fr .75fr;
     grid-template-rows: .25fr 1fr 1fr .3fr;
 
 }
-
 .canvasContainer{
     position: absolute;
     z-index: 1;
     margin-top: 30px;
     margin-right: 15px;
     box-shadow: inset 0 0 40px rgba(243, 247, 246, 0.452);
-    // background: radial-gradient( rgba(42, 73, 60, 0.582) 50%, rgba(120, 133, 127, 0.253) ); 
-    
-    
 }
 
 .canvasBand {
@@ -238,10 +180,8 @@ img{
     margin-top: 160px;
     margin-left: 20rem;
     position: absolute;
-    z-index: -20;
-   
+    z-index: -20; 
 }
-
 
 .bckimg {
     display: flex;
@@ -251,15 +191,11 @@ img{
    
 }
 
-//made canvas view
-
 .madeCanvasBackground{
     position:absolute;
     top: 120px;
     left: 263px;
     z-index: 1;
-    // border: 2px solid red;
-   
 }
 
 img.madeBckground{
@@ -271,8 +207,6 @@ img.madeBckground{
     top: 123px;
     left: 99px;
     z-index: 2;
-    // border: 2px solid black;
-   
 }
 
 .list-of-made-canvases{
@@ -298,86 +232,46 @@ img.madeBckground{
     grid-template-rows:auto;
     margin: 0 auto;
 }
-
 img.boardSketchThumb{
     max-width: 100%;
     max-height:auto;
 }
-// .sketchContainer {
-//    display: grid;
-//    grid-template-rows: 1fr 1fr;
-//    grid-template-columns: 1fr 1fr;
-// }
-
-// .sketch {
-//     max-height: .33vh;
-//     max-width: .33vw;
-
-// }
-
 .band{
     margin: 50px 50px 50px 50px;
-    // background: rgb(156, 129, 129);
-    //  background:   rgba(42, 73, 60, 0.582); 
-    //  background:  rgba(42, 73, 60, 0.582); //green from yesterday
-    //  object-fit: contain;
+
     padding: 10px 10px 10px 10px;
     -moz-background-clip: border;     /* Firefox 3.6 */
     -webkit-background-clip: border;  /* Safari 4? Chrome 6? */
     background-clip: border-box;
 }
 
-//this makes a scrolling horizontal window of tiny thumbnails
 .sketchBand {
     margin: 50px 50px 50px 50px;
-    // background: rgb(156, 129, 129);
-    //  background:   rgba(42, 73, 60, 0.582); 
-    //  background:  rgba(42, 73, 60, 0.582); //green from yesterday
-    //  object-fit: contain;
     padding: 10px 10px 10px 10px;
     -moz-background-clip: border;     /* Firefox 3.6 */
     -webkit-background-clip: border;  /* Safari 4? Chrome 6? */
     background-clip: border-box;
     column-count: 4;   
 }
-
-
 .sketchForMain{
     max-width: 100%;
     max-height: auto;
 }
-
 .pinBoard{
     box-shadow: inset 0 0 10px rgb(255, 255, 255);
     background:  rgba(44, 83, 71, 0.685); //pretty blue green
-    // background: radial-gradient( rgba(42, 73, 60, 0.582) 5%, rgba(120, 133, 127, 0.253) ); //green background
     margin-bottom: 20px;
-    
     object-fit: contain;
     padding: 10px;
     -webkit-column-break-inside: avoid;
-    /* Chrome, Safari, Opera */
-  
+    /* Chrome, Safari, Opera */ 
 }
 
 img.pinThumb {
     width: 100%;
-   
 }
 
-// .button {
-//     background-color: rgb(255, 255, 255); 
-//     border: none;
-//     color: white;
-//     padding: 15px 32px;
-//     text-align: center;
-//     text-decoration: none;
-//     display: inline-block;
-//     font-size: 16px;
-// }
-
 .pinBoard:hover{
-   
     box-shadow: inset 0 0 20px rgba(230, 233, 232, 0.938);
 }
 
@@ -397,9 +291,7 @@ img.port {
     position: absolute;
     z-index: 20;
     margin-left: -200px;
-    margin-top: -50px;
-    
-    
+    margin-top: -50px;    
 }
 .name{
     position: absolute;
@@ -417,17 +309,10 @@ img.port {
 .flex{
     display: flex;
 }
-.navContainer{
-    background-image: url(app/thickwhitepaintstroke.png);
-}
-
 
 //Background color 
-body{
-    // background:  rgba(194, 200, 233, 0.185);  
+body{ 
     background: rgba(255, 255, 255, 0.103);
-    // background: radial-gradient( rgba(12, 64, 87, 0.678) 3%, rgba(120, 133, 127, 0.151) ); //pretty blue green
-    // background: radial-gradient( rgba(42, 73, 60, 0.582) 50%, rgba(120, 133, 127, 0.253) ); green background
     height: 100%;
     margin: 0;
     background-repeat: no-repeat;
@@ -534,9 +419,6 @@ input[type=range] {
     background: rgba(42, 73, 60, 0.582);
   }
 //END line width selector styling
-
-
-
   img.pinCover {
       max-height:auto;
       max-width:500px;
@@ -551,18 +433,11 @@ input[type=range] {
     font-size: 2rem;
     width: 100%;
     padding-left: 125px;
-    //   margin-left: 
   }
-
-//   a.mark{
-//     margin-left: 1100px;
-//     margin-top: 100px;
-//   }
   img.bckimg{
     max-width: 960px;
     max-height: auto;
 }
-
   //media queries
   @media only screen 
   and (min-device-width: 768px) 
@@ -630,10 +505,7 @@ input[type=range] {
   }
 
   .canvas-list {
-  
     z-index:55;
-    // box-shadow: inset 0 0 10px rgba(36, 107, 95, 0.452);
-
 }
 
 /* Portrait IPHONE QUERIES*/ 
@@ -645,7 +517,6 @@ input[type=range] {
     .color-selector {
         grid-row: 4/4;
         grid-column:2/7;
-      //   box-shadow: inset 0 0 10px rgba(36, 107, 95, 0.452);
     }
 
     .canvasContainer {
